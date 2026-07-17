@@ -1,63 +1,62 @@
-@use 'sass:color';
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 // ─── Elementor Subtitle ─────────────────────────────────────────────
 .elementor-widget-heading {
-    span.elementor-heading-title {
-        color: $color-secondary;
-        text-transform: uppercase;
-        font-size: 15px;
-        font-weight: 400;
-        @include respond-below(md) {
-            font-size: 14px;
-        }
-        @include respond-below(sm) {
-            font-size: 13px;
-        }
+  span.elementor-heading-title {
+    color: $color-secondary;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 400;
+    @include respond-below(md) {
+      font-size: 14px;
     }
+    @include respond-below(sm) {
+      font-size: 13px;
+    }
+  }
 }
 
 // ─── Page ─────────────────────────────────────────────
 #primary.site-main {
-    padding: 100px 0;
+  padding: 100px 0;
 
-    @include respond-below(lg) {
-        padding: 70px 0;
-    }
+  @include respond-below(lg) {
+    padding: 70px 0;
+  }
 
-    @include respond-below(md) {
-        padding: 60px 0;
-    }
+  @include respond-below(md) {
+    padding: 60px 0;
+  }
 }
 
-body.wp-theme-pestro {
-    margin: 0;
+body.wp-theme-carvia {
+  margin: 0;
 }
-
 
 // ─── 404 Page ──────────────────────────────────────────
-.pestro-404{
-    .not-found-content {
-        text-align: center;
-        h1 {
-            font-size: 100px;
-            @include respond-below(md) {
-                font-size: 50px;
-            }
-        }
-        h2{
-            font-size: 40px;
-            @include respond-below(md) {
-                font-size: 20px;
-            }
-        }
-        p{
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .button-wrapper{
-            margin: 40px 0 0;
-        }
+.carvia-404 {
+  .not-found-content {
+    text-align: center;
+    h1 {
+      font-size: 100px;
+      @include respond-below(md) {
+        font-size: 50px;
+      }
     }
+    h2 {
+      font-size: 40px;
+      @include respond-below(md) {
+        font-size: 20px;
+      }
+    }
+    p {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .button-wrapper {
+      margin: 40px 0 0;
+    }
+  }
 }

@@ -36,7 +36,7 @@ const paths = {
       '!assets/scss/**',
       '!assets/css/maps/**'
     ],
-    filename: 'pestro.zip',
+    filename: 'carvia.zip',
     dest:     '../',           // one level up from theme root
   },
 };
@@ -92,12 +92,12 @@ function watchFiles() {
   log('👀  Watching SCSS & JS files…');
 }
 
-/* ─── Package: generate pestro.zip ─────────────────────────── */
+/* ─── Package: generate carvia.zip ─────────────────────────── */
 function packageTheme() {
   return src(paths.zip.src, { base: '../' })
     .pipe(zip(paths.zip.filename))
     .pipe(dest(paths.zip.dest))
-    .on('end', () => log('📦  pestro.zip generated at ' + paths.zip.dest));
+    .on('end', () => log('📦  carvia.zip generated at ' + paths.zip.dest));
 }
 
 /* ─── Exports ───────────────────────────────────────────────── */

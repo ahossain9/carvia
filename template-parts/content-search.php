@@ -5,26 +5,26 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package pestro
+ * @package carvia
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
-	$pestro_option	= get_option('pestro_opt');
-	$post_cat 		= $pestro_option['post-cat'] ?? '';
+	$carvia_option	= get_option('carvia_opt');
+	$post_cat 		= $carvia_option['post-cat'] ?? '';
 
 	if (is_single() && 'post' === get_post_type()) {
-		$pestro_single_post_class = ' pestro-single-post';
+		$carvia_single_post_class = ' carvia-single-post';
 	} else {
-		$pestro_single_post_class = '';
+		$carvia_single_post_class = '';
 	}
 	?>
-	<div class="blog-posts pestro-search-content <?php echo esc_attr($pestro_single_post_class); ?>">
+	<div class="blog-posts carvia-search-content <?php echo esc_attr($carvia_single_post_class); ?>">
 		<?php if (has_post_thumbnail()) : ?>
 			<div class="blog-post-thumb">
-				<?php the_post_thumbnail('pestro-blog-thumb'); ?>
+				<?php the_post_thumbnail('carvia-blog-thumb'); ?>
 			</div>
 		<?php endif; ?>
 		<header class="entry-header">
@@ -32,11 +32,11 @@
 			if ('post' === get_post_type()) : ?>
 				<div class="blog-posts-meta">
 					<ul>
-						<li><?php pestro_posted_by(); ?></li>
-						<li><?php pestro_posted_on(); ?></li>
-						<?php if (get_comments_number() != 0) { ?><li><?php pestro_comment_count(); ?></li><?php } ?>
+						<li><?php carvia_posted_by(); ?></li>
+						<li><?php carvia_posted_on(); ?></li>
+						<?php if (get_comments_number() != 0) { ?><li><?php carvia_comment_count(); ?></li><?php } ?>
 
-						<?php if ($post_cat == true || $post_cat !== NULL) { ?><li><?php pestro_post_categories(); ?></li><?php } ?>
+						<?php if ($post_cat == true || $post_cat !== NULL) { ?><li><?php carvia_post_categories(); ?></li><?php } ?>
 					</ul>
 				</div><!-- .entry-meta -->
 			<?php endif; ?>
@@ -52,7 +52,7 @@
 				the_content(sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'pestro'),
+						__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'carvia'),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -63,12 +63,12 @@
 				));
 
 				wp_link_pages(array(
-					'before' => '<div class="page-links">' . esc_html__('Pages:', 'pestro'),
+					'before' => '<div class="page-links">' . esc_html__('Pages:', 'carvia'),
 					'after'  => '</div>',
 				));
 			} else {
 				the_excerpt();
-				echo '<div class="pestro-post-read-more"><a href="' . esc_url(get_permalink()) . '" class="pestro-btn fill-btn">' . esc_html__('Read more', 'pestro') . '</a></div>';
+				echo '<div class="carvia-post-read-more"><a href="' . esc_url(get_permalink()) . '" class="carvia-btn fill-btn">' . esc_html__('Read more', 'carvia') . '</a></div>';
 			}
 			?>
 		</div><!-- .entry-content -->

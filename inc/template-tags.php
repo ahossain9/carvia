@@ -5,14 +5,14 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package pestro
+ * @package carvia
  */
 
-if (! function_exists('pestro_posted_on')) :
+if (! function_exists('carvia_posted_on')) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
-	function pestro_posted_on()
+	function carvia_posted_on()
 	{
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if (get_the_time('U') !== get_the_modified_time('U')) {
@@ -29,7 +29,7 @@ if (! function_exists('pestro_posted_on')) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x('Posted on %s', 'post date', 'pestro'),
+			esc_html_x('Posted on %s', 'post date', 'carvia'),
 			'<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -38,15 +38,15 @@ if (! function_exists('pestro_posted_on')) :
 	}
 endif;
 
-if (! function_exists('pestro_posted_by')) :
+if (! function_exists('carvia_posted_by')) :
 	/**
 	 * Prints HTML with meta information for the current author.
 	 */
-	function pestro_posted_by()
+	function carvia_posted_by()
 	{
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x('by %s', 'post author', 'pestro'),
+			esc_html_x('by %s', 'post author', 'carvia'),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
 		);
 
@@ -55,49 +55,49 @@ if (! function_exists('pestro_posted_by')) :
 	}
 endif;
 
-if (! function_exists('pestro_post_tags')) :
+if (! function_exists('carvia_post_tags')) :
 	/**
 	 * Prints HTML with meta information for the tags.
 	 */
-	function pestro_post_tags()
+	function carvia_post_tags()
 	{
 		// Hide category and tag text for pages.
 		if ('post' === get_post_type()) {
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list('', esc_html_x(' ', 'list item separator', 'pestro'));
+			$tags_list = get_the_tag_list('', esc_html_x(' ', 'list item separator', 'carvia'));
 			if ($tags_list) {
 				/* translators: 1: list of tags. */
-				printf('<span class="tags-links">' . esc_html__('Tags: %1$s', 'pestro') . '</span>', $tags_list); // WPCS: XSS OK.
+				printf('<span class="tags-links">' . esc_html__('Tags: %1$s', 'carvia') . '</span>', $tags_list); // WPCS: XSS OK.
 			}
 		}
 	}
 endif;
 
-if (! function_exists('pestro_post_categories')) :
+if (! function_exists('carvia_post_categories')) :
 	/**
 	 * Prints HTML with meta information for the categories.
 	 */
-	function pestro_post_categories()
+	function carvia_post_categories()
 	{
 		// Hide category and tag text for pages.
 		if ('post' === get_post_type()) {
 
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list(esc_html__(', ', 'pestro'));
+			$categories_list = get_the_category_list(esc_html__(', ', 'carvia'));
 			if ($categories_list) {
 				/* translators: 1: list of categories. */
-				printf('<span class="cat-links">' . esc_html__('%1$s', 'pestro') . '</span>', $categories_list); // WPCS: XSS OK.
+				printf('<span class="cat-links">' . esc_html__('%1$s', 'carvia') . '</span>', $categories_list); // WPCS: XSS OK.
 			}
 		}
 	}
 endif;
 
-if (! function_exists('pestro_comment_count')) :
+if (! function_exists('carvia_comment_count')) :
 	/**
 	 * Prints HTML with meta information for the comments.
 	 */
-	function pestro_comment_count()
+	function carvia_comment_count()
 	{
 		if (! post_password_required() && (comments_open() || get_comments_number()) && get_comments_number() != 0) {
 			echo '<span class="comments-link"><i class="fa fa-comments-o"></i>';
@@ -107,26 +107,26 @@ if (! function_exists('pestro_comment_count')) :
 	}
 endif;
 
-if (! function_exists('pestro_entry_footer')) :
+if (! function_exists('carvia_entry_footer')) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
-	function pestro_entry_footer()
+	function carvia_entry_footer()
 	{
 		// Hide category and tag text for pages.
 		if ('post' === get_post_type()) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list(esc_html__(', ', 'pestro'));
+			$categories_list = get_the_category_list(esc_html__(', ', 'carvia'));
 			if ($categories_list) {
 				/* translators: 1: list of categories. */
-				printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'pestro') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'carvia') . '</span>', $categories_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'pestro'));
+			$tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'carvia'));
 			if ($tags_list) {
 				/* translators: 1: list of tags. */
-				printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'pestro') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'carvia') . '</span>', $tags_list); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 
@@ -136,7 +136,7 @@ if (! function_exists('pestro_entry_footer')) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'pestro'),
+						__('Leave a Comment<span class="screen-reader-text"> on %s</span>', 'carvia'),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -153,7 +153,7 @@ if (! function_exists('pestro_entry_footer')) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__('Edit <span class="screen-reader-text">%s</span>', 'pestro'),
+					__('Edit <span class="screen-reader-text">%s</span>', 'carvia'),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -168,14 +168,14 @@ if (! function_exists('pestro_entry_footer')) :
 	}
 endif;
 
-if (! function_exists('pestro_post_thumbnail')) :
+if (! function_exists('carvia_post_thumbnail')) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function pestro_post_thumbnail()
+	function carvia_post_thumbnail()
 	{
 		if (post_password_required() || is_attachment() || ! has_post_thumbnail()) {
 			return;

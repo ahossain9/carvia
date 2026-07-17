@@ -3,13 +3,13 @@
 /**
  * Template Name: Full Width Page
  *
- * @package Pestro
+ * @package Carvia
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main pestro-page pestro-page--full-width">
+<main id="primary" class="site-main carvia-page carvia-page--full-width">
     <?php
     while (have_posts()) :
         the_post();

@@ -1,5 +1,5 @@
 /**
- * Pestro Theme — Main JavaScript
+ * Carvia Theme — Main JavaScript
  * Author: Omexer
  * Version: 1.0
  */
@@ -9,10 +9,10 @@
     'use strict';
   
     $( function () {
-        Pestro.init();
+        Carvia.init();
     } );
 
-    var Pestro = {
+    var Carvia = {
         init: function () {
             this.mobileNav();
         },
@@ -44,7 +44,7 @@
 
     //* ─── Preloader ─────────────────────────────── */
     $(window).on('load', function() {
-        $('#pestro-preloader').fadeOut(500);
+        $('#carvia-preloader').fadeOut(500);
     });
 
 } ( jQuery ) );

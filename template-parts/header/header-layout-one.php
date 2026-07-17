@@ -3,20 +3,20 @@
 /**
  * Default Header Template Part
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-$logo_data          = pestro_option('header_logo', []);
+$logo_data          = carvia_option('header_logo', []);
 $logo_url           = ! empty($logo_data['url']) ? $logo_data['url'] : '';
-$logo_width         = pestro_option('header_logo_width', ['width' => '160', 'units' => 'px']);
+$logo_width         = carvia_option('header_logo_width', ['width' => '160', 'units' => 'px']);
 $logo_w_val         = ! empty($logo_width['width']) ? esc_attr($logo_width['width']) . esc_attr($logo_width['units']) : '160px';
-$header_button      = pestro_option('header_button', true);
-$header_button_text = pestro_option('header_button_text', esc_html__('Book A Service', 'pestro'));
-$header_button_url  = pestro_option('header_button_url', '#');
+$header_button      = carvia_option('header_button', true);
+$header_button_text = carvia_option('header_button_text', esc_html__('Book A Service', 'carvia'));
+$header_button_url  = carvia_option('header_button_url', '#');
 ?>
 
 <div class="container">
@@ -39,7 +39,7 @@ $header_button_url  = pestro_option('header_button_url', '#');
         </div><!-- header logo -->
 
         <!-- Primary Nav -->
-        <nav class="header-nav text-right" id="site-navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'pestro'); ?>">
+        <nav class="header-nav text-right" id="site-navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'carvia'); ?>">
             <?php
             $has_menu = has_nav_menu('primary-menu');
 
@@ -54,7 +54,7 @@ $header_button_url  = pestro_option('header_button_url', '#');
             elseif (current_user_can('manage_options')) : ?>
                 <a href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"
                     class="header-create-menu">
-                    <?php esc_html_e('+ Create a Menu', 'pestro'); ?>
+                    <?php esc_html_e('+ Create a Menu', 'carvia'); ?>
                 </a>
 
             <?php endif; ?>

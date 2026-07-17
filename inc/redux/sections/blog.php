@@ -3,15 +3,15 @@
 /**
  * Redux: Blog Section
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-Redux::set_section('pestro_options', [
-    'title'  => esc_html__('Blog', 'pestro'),
+Redux::set_section('carvia_options', [
+    'title'  => esc_html__('Blog', 'carvia'),
     'id'     => 'blog',
     'icon'   => 'el el-pencil',
     'fields' => [
@@ -19,18 +19,18 @@ Redux::set_section('pestro_options', [
         [
             'id'       => 'blog_layout',
             'type'     => 'image_select',
-            'title'    => esc_html__('Blog Layout', 'pestro'),
-            'subtitle' => esc_html__('Choose the blog archive layout.', 'pestro'),
+            'title'    => esc_html__('Blog Layout', 'carvia'),
+            'subtitle' => esc_html__('Choose the blog archive layout.', 'carvia'),
             'options'  => [
                 'grid' => [
-                    'alt'   => esc_html__('Grid', 'pestro'),
-                    'title' => esc_html__('Grid', 'pestro'),
-                    'img'   => PESTRO_INC_URI . 'redux/assets/left-sidebar.png',
+                    'alt'   => esc_html__('Grid', 'carvia'),
+                    'title' => esc_html__('Grid', 'carvia'),
+                    'img'   => CARVIA_INC_URI . 'redux/assets/left-sidebar.png',
                 ],
                 'list' => [
-                    'alt'   => esc_html__('List', 'pestro'),
-                    'title' => esc_html__('List', 'pestro'),
-                    'img'   => PESTRO_INC_URI . 'redux/assets/left-sidebar.png',
+                    'alt'   => esc_html__('List', 'carvia'),
+                    'title' => esc_html__('List', 'carvia'),
+                    'img'   => CARVIA_INC_URI . 'redux/assets/left-sidebar.png',
                 ],
             ],
             'default'  => 'grid',
@@ -38,39 +38,39 @@ Redux::set_section('pestro_options', [
         [
             'id'      => 'blog_sidebar',
             'type'    => 'select',
-            'title'   => esc_html__('Blog Sidebar Position', 'pestro'),
+            'title'   => esc_html__('Blog Sidebar Position', 'carvia'),
             'required' => ['blog_layout', '=', 'list'],
             'options' => [
-                'right' => esc_html__('Right Sidebar', 'pestro'),
-                'left'  => esc_html__('Left Sidebar', 'pestro'),
-                'none'  => esc_html__('No Sidebar', 'pestro'),
+                'right' => esc_html__('Right Sidebar', 'carvia'),
+                'left'  => esc_html__('Left Sidebar', 'carvia'),
+                'none'  => esc_html__('No Sidebar', 'carvia'),
             ],
             'default' => 'right',
         ],
         [
             'id'      => 'show_excerpt',
             'type'    => 'switch',
-            'title'   => esc_html__('Show Post Excerpt', 'pestro'),
+            'title'   => esc_html__('Show Post Excerpt', 'carvia'),
             'default' => true,
         ],
         [
             'id'      => 'excerpt_length',
             'type'    => 'spinner',
-            'title'   => esc_html__('Excerpt Word Length', 'pestro'),
+            'title'   => esc_html__('Excerpt Word Length', 'carvia'),
             'min'     => 10,
             'max'     => 100,
             'step'    => 5,
             'default' => 25,
             'required' => ['show_excerpt', '=', true],
-         ],
+        ],
         [
             'id'      => 'show_post_meta',
             'type'    => 'checkbox',
-            'title'   => esc_html__('Post Meta Items', 'pestro'),
+            'title'   => esc_html__('Post Meta Items', 'carvia'),
             'options' => [
-                'date'     => esc_html__('Date', 'pestro'),
-                'author'   => esc_html__('Author', 'pestro'),
-                'category' => esc_html__('Category', 'pestro'),
+                'date'     => esc_html__('Date', 'carvia'),
+                'author'   => esc_html__('Author', 'carvia'),
+                'category' => esc_html__('Category', 'carvia'),
             ],
             'default' => [
                 'date'     => '1',

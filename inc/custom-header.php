@@ -9,40 +9,40 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package pestro
+ * @package carvia
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses pestro_header_style()
+ * @uses carvia_header_style()
  */
-function pestro_custom_header_setup()
+function carvia_custom_header_setup()
 {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'pestro_custom_header_args',
+			'carvia_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'pestro_header_style',
+				'wp-head-callback'   => 'carvia_header_style',
 			)
 		)
 	);
 }
-add_action('after_setup_theme', 'pestro_custom_header_setup');
+add_action('after_setup_theme', 'carvia_custom_header_setup');
 
-if (! function_exists('pestro_header_style')) :
+if (! function_exists('carvia_header_style')) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see pestro_custom_header_setup().
+	 * @see carvia_custom_header_setup().
 	 */
-	function pestro_header_style()
+	function carvia_header_style()
 	{
 		$header_text_color = get_header_textcolor();
 

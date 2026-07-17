@@ -3,37 +3,37 @@
 /**
  * Blog Post Card — Grid Layout
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-$meta_opts = pestro_option('show_post_meta', [
+$meta_opts = carvia_option('show_post_meta', [
     'date'     => '1',
     'author'   => '1',
     'category' => '1',
 ]);
 
-$show_excerpt    = (bool) pestro_option('show_excerpt', true);
-$excerpt_length  = (int) pestro_option('excerpt_length', 25);
+$show_excerpt    = (bool) carvia_option('show_excerpt', true);
+$excerpt_length  = (int) carvia_option('excerpt_length', 25);
 ?>
 <!-- Start Article -->
-<article id="post-<?php the_ID(); ?>" <?php post_class('pestro-post-card-wrap'); ?> class="<?php echo has_post_thumbnail() ? ' has-thumbnail' : ''; ?>">
-    <div class="pestro-post-card">
+<article id="post-<?php the_ID(); ?>" <?php post_class('carvia-post-card-wrap'); ?> class="<?php echo has_post_thumbnail() ? ' has-thumbnail' : ''; ?>">
+    <div class="carvia-post-card">
         <!-- Start Thumbnail -->
         <?php if (has_post_thumbnail()) : ?>
-            <div class="pestro-post-card__thumb">
+            <div class="carvia-post-card__thumb">
                 <a href="<?php the_permalink(); ?>">
-                    <?php the_post_thumbnail('pestro-blog-grid', ['loading' => 'lazy', 'alt' => esc_attr(get_the_title())]); ?>
+                    <?php the_post_thumbnail('carvia-blog-grid', ['loading' => 'lazy', 'alt' => esc_attr(get_the_title())]); ?>
                 </a>
             </div>
         <?php endif; ?>
         <!-- End Thumbnail -->
         <!-- Star Card Body -->
-        <div class="pestro-post-card__body">
-            <div class="pestro-post-card__meta">
+        <div class="carvia-post-card__body">
+            <div class="carvia-post-card__meta">
                 <?php if (! empty($meta_opts['author'])) : ?>
                     <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="post-author">
                         <i class="hgi hgi-stroke hgi-rounded hgi-user-circle"></i> <?php echo esc_html(get_the_author()); ?>
@@ -56,20 +56,20 @@ $excerpt_length  = (int) pestro_option('excerpt_length', 25);
             </div>
 
             <?php if (get_the_title()) : ?>
-                <h2 class="pestro-post-card__title">
+                <h2 class="carvia-post-card__title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
             <?php endif; ?>
 
             <?php if ($show_excerpt) : ?>
-                <p class="pestro-post-card__excerpt">
+                <p class="carvia-post-card__excerpt">
                     <?php echo esc_html(wp_trim_words(get_the_excerpt(), $excerpt_length, '…')); ?>
                 </p>
             <?php endif; ?>
 
-            <div class="pestro-post-card__footer">
-                <a href="<?php the_permalink(); ?>" class="pestro-post-card__read-more">
-                    <span class="read-more-text"><?php esc_html_e('Read More', 'pestro'); ?></span> <span class="read-more-icon"><i class="arrow-out hgi-stroke hgi-arrow-right-02"></i></span>
+            <div class="carvia-post-card__footer">
+                <a href="<?php the_permalink(); ?>" class="carvia-post-card__read-more">
+                    <span class="read-more-text"><?php esc_html_e('Read More', 'carvia'); ?></span> <span class="read-more-icon"><i class="arrow-out hgi-stroke hgi-arrow-right-02"></i></span>
                 </a>
             </div>
         </div>

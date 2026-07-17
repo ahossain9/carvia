@@ -3,15 +3,15 @@
 /**
  * Redux: Typography Section
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-Redux::set_section('pestro_options', [
-    'title'  => esc_html__('Typography', 'pestro'),
+Redux::set_section('carvia_options', [
+    'title'  => esc_html__('Typography', 'carvia'),
     'id'     => 'typography',
     'icon'   => 'el el-font',
     'fields' => [
@@ -19,8 +19,8 @@ Redux::set_section('pestro_options', [
         [
             'id'          => 'body_font',
             'type'        => 'typography',
-            'title'       => esc_html__('Body Font', 'pestro'),
-            'subtitle'    => esc_html__('Set the main body text font.', 'pestro'),
+            'title'       => esc_html__('Body Font', 'carvia'),
+            'subtitle'    => esc_html__('Set the main body text font.', 'carvia'),
             'font-style'  => false,
             'subsets'     => false,
             'text-align'  => false,
@@ -35,8 +35,8 @@ Redux::set_section('pestro_options', [
         [
             'id'          => 'heading_font',
             'type'        => 'typography',
-            'title'       => esc_html__('Heading Font', 'pestro'),
-            'subtitle'    => esc_html__('Applied to all h1–h6 elements.', 'pestro'),
+            'title'       => esc_html__('Heading Font', 'carvia'),
+            'subtitle'    => esc_html__('Applied to all h1–h6 elements.', 'carvia'),
             'font-style'  => false,
             'subsets'     => false,
             'text-align'  => false,

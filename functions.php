@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Pestro Theme Functions
+ * Carvia Theme Functions
  *
- * @package    Pestro
+ * @package    Carvia
  * @author     Omexer
  * @version    1.0
  */
@@ -13,15 +13,15 @@ if (! defined('ABSPATH')) {
 }
 
 // ─── Constants ────────────────────────────────────────────────
-define('PESTRO_VERSION',   '1.0');
-define('PESTRO_DIR',       get_template_directory());
-define('PESTRO_URI',       get_template_directory_uri());
-define('PESTRO_INC',       PESTRO_DIR . '/inc/');
-define('PESTRO_INC_URI',   PESTRO_URI . '/inc/');
-define('PESTRO_ASSETS',    PESTRO_URI . '/assets/');
+define('CARVIA_VERSION',   '1.0');
+define('CARVIA_DIR',       get_template_directory());
+define('CARVIA_URI',       get_template_directory_uri());
+define('CARVIA_INC',       CARVIA_DIR . '/inc/');
+define('CARVIA_INC_URI',   CARVIA_URI . '/inc/');
+define('CARVIA_ASSETS',    CARVIA_URI . '/assets/');
 
 // ─── Includes ─────────────────────────────────────────────────
-$pestro_includes = [
+$carvia_includes = [
 	'inc/setup.php',
 	'inc/enqueue.php',
 	'inc/nav-menus.php',
@@ -34,8 +34,8 @@ $pestro_includes = [
 	'inc/custom-comment-template.php',
 ];
 
-foreach ($pestro_includes as $file) {
-	$path = PESTRO_DIR . '/' . $file;
+foreach ($carvia_includes as $file) {
+	$path = CARVIA_DIR . '/' . $file;
 	if (file_exists($path)) {
 		require_once $path;
 	}

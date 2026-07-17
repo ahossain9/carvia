@@ -1,176 +1,174 @@
-@use 'sass:color';
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 // ─── Headings ─────────────────────────────────────────────────
 // Scoped to #page to prevent bleeding into WordPress admin.
 // Admin uses #wpwrap as its root — #page only exists on the frontend.
-.wp-theme-pestro {    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @include heading-style;
-        margin-top: 0;
-        margin-bottom: 1.25rem;
-        @include respond-below(md) {
-            margin-bottom: 1rem;
-        }
+.wp-theme-carvia {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include heading-style;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    @include respond-below(md) {
+      margin-bottom: 1rem;
     }
-    p {
-        margin-bottom: 1.25rem;
-        @include respond-below(md) {
-            margin-bottom: 1rem;
-        }
+  }
+  p {
+    margin-bottom: 1.25rem;
+    @include respond-below(md) {
+      margin-bottom: 1rem;
     }
-    
+  }
+
+  h1 {
+    font-size: $h1-size;
+  }
+
+  h2 {
+    font-size: $h2-size;
+  }
+
+  h3 {
+    font-size: $h3-size;
+  }
+
+  h4 {
+    font-size: $h4-size;
+  }
+
+  h5 {
+    font-size: $h5-size;
+  }
+
+  h6 {
+    font-size: $h6-size;
+  }
+
+  @include respond-below(xl) {
     h1 {
-        font-size: $h1-size;
+      font-size: 50px;
     }
 
     h2 {
-        font-size: $h2-size;
+      font-size: 40px;
     }
 
     h3 {
-        font-size: $h3-size;
+      font-size: 28px;
     }
 
     h4 {
-        font-size: $h4-size;
+      font-size: 24px;
     }
 
     h5 {
-        font-size: $h5-size;
+      font-size: 18px;
     }
 
     h6 {
-        font-size: $h6-size;
+      font-size: 16px;
+    }
+  }
+
+  @include respond-below(lg) {
+    h1 {
+      font-size: 40px;
     }
 
-    @include respond-below(xl) {
-        h1 {
-            font-size: 50px;
-        }
-    
-        h2 {
-            font-size: 40px;
-        }
-    
-        h3 {
-            font-size: 28px;
-        }
-    
-        h4 {
-            font-size: 24px;
-        }
-    
-        h5 {
-            font-size: 18px;
-        }
-    
-        h6 {
-            font-size: 16px;
-        }
-    }
-    
-    @include respond-below(lg) {
-        h1 {
-            font-size: 40px;
-        }
-
-        h2 {
-            font-size: 30px;
-        }
-
-        h3 {
-            font-size: 24px;
-        }
-
-        h4 {
-            font-size: 20px;
-        }
-
-        h5 {
-            font-size: 18px;
-        }
-
-        h6 {
-            font-size: 16px;
-        }
+    h2 {
+      font-size: 30px;
     }
 
-    @include respond-below(md) {
-        h1 {
-            font-size: 30px;
-        }
-
-        h2 {
-            font-size: 26px;
-        }
-
-        h3 {
-            font-size: 20px;
-        }
-
-        h4 {
-            font-size: 18px;
-        }
-        
-        h5 {
-            font-size: 17px;
-        }
-        
-        h6 {
-            font-size: 15px;
-        }
-         
-        p {
-            font-size: 15px;
-        }
+    h3 {
+      font-size: 24px;
     }
+
+    h4 {
+      font-size: 20px;
+    }
+
+    h5 {
+      font-size: 18px;
+    }
+
+    h6 {
+      font-size: 16px;
+    }
+  }
+
+  @include respond-below(md) {
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 26px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 18px;
+    }
+
+    h5 {
+      font-size: 17px;
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+  }
 }
 
 // ─── Body Text ────────────────────────────────────────────────
 body {
-    font-family: $font-body;
-    margin-bottom: $spacer;
-    color: $color-body;
-    font-size: $font-size-base;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+  font-family: $font-body;
+  margin-bottom: $spacer;
+  color: $color-body;
+  font-size: $font-size-base;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 // ─── Elementort ────────────────────────────────────────────
 .elementor-element.elementor-widget-text-editor {
-    font-family: $font-body;
-    color: $color-body;
+  font-family: $font-body;
+  color: $color-body;
 }
 
 .elementor-element.elementor-widget-heading {
-    .elementor-heading-title {
-        font-family: $font-heading;
-        color: $color-heading
-    }
+  .elementor-heading-title {
+    font-family: $font-heading;
+    color: $color-heading;
+  }
 }
 
 // ─── Entry Content ────────────────────────────────────────────
 .entry-content {
+  ul {
+    list-style: disc;
+  }
 
-    ul {
-        list-style: disc;
-    }
-
-    ol {
-        list-style: decimal;
-    }
+  ol {
+    list-style: decimal;
+  }
 }
 
-
 .elementor-kit-1 {
-    // or use generic selector below
-    --e-global-color-primary:$color-primary;
-    --e-global-color-secondary: $color-secondary;
+  // or use generic selector below
+  --e-global-color-primary: $color-primary;
+  --e-global-color-secondary: $color-secondary;
 }

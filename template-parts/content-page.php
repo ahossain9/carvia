@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package pestro
+ * @package carvia
  */
 
 ?>
@@ -21,7 +21,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'pestro'),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'carvia'),
 				'after'  => '</div>',
 			)
 		);

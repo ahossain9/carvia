@@ -3,17 +3,17 @@
 /**
  * Default Footer Template Part
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-$copyright     = pestro_option('footer_copyright', '&copy; ' . wp_date('Y') . ' Pestro');
+$copyright     = carvia_option('footer_copyright', '&copy; ' . wp_date('Y') . ' Carvia');
 ?>
 
-<div class="pestro-footer-copyright">
+<div class="carvia-footer-copyright">
     <div class="container">
         <p>
             <?php echo wp_kses_post($copyright); ?>

@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package pestro
+ * @package carvia
  */
 
 ?>
@@ -13,17 +13,17 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <?php
-    $pestro_option       = get_option('pestro_opt');
-    $single_post_author = $pestro_option['single-post-author'] ?? '';
-    $single_post_cat    = $pestro_option['single-post-cat'] ?? '';
-    $single_post_comnt  = $pestro_option['single-post-comnt'] ?? '';
-    $single_post_tag    = $pestro_option['single-post-tag'] ?? '';
+    $carvia_option       = get_option('carvia_opt');
+    $single_post_author = $carvia_option['single-post-author'] ?? '';
+    $single_post_cat    = $carvia_option['single-post-cat'] ?? '';
+    $single_post_comnt  = $carvia_option['single-post-comnt'] ?? '';
+    $single_post_tag    = $carvia_option['single-post-tag'] ?? '';
     ?>
 
-    <div class="blog-posts pestro-single-post">
+    <div class="blog-posts carvia-single-post">
         <?php if (has_post_thumbnail()) : ?>
             <div class="blog-post-thumb">
-                <?php the_post_thumbnail('pestro-blog-thumb'); ?>
+                <?php the_post_thumbnail('carvia-blog-thumb'); ?>
             </div>
         <?php endif; ?>
 
@@ -33,19 +33,19 @@
                 <div class="blog-posts-meta">
                     <ul>
                         <?php if ($single_post_author == true): ?>
-                            <li><?php pestro_posted_by(); ?></li>
+                            <li><?php carvia_posted_by(); ?></li>
                         <?php endif; ?>
 
-                        <li><?php pestro_posted_on(); ?></li>
+                        <li><?php carvia_posted_on(); ?></li>
                         <?php if (get_comments_number() != 0):
                             if ($single_post_comnt == true): ?>
-                                <li><?php pestro_comment_count(); ?></li>
+                                <li><?php carvia_comment_count(); ?></li>
                         <?php
                             endif;
                         endif;
                         ?>
 
-                        <?php if ($single_post_cat == true) { ?><li><?php pestro_post_categories(); ?></li><?php } ?>
+                        <?php if ($single_post_cat == true) { ?><li><?php carvia_post_categories(); ?></li><?php } ?>
                     </ul>
                 </div><!-- .entry-meta -->
             <?php endif; ?>
@@ -57,7 +57,7 @@
                 the_content(sprintf(
                     wp_kses(
                         /* translators: %s: Name of current post. Only visible to screen readers */
-                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'pestro'),
+                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'carvia'),
                         array(
                             'span' => array(
                                 'class' => array(),
@@ -68,12 +68,12 @@
                 ));
 
                 wp_link_pages(array(
-                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'pestro'),
+                    'before' => '<div class="page-links">' . esc_html__('Pages:', 'carvia'),
                     'after'  => '</div>',
                 ));
             } else {
                 the_excerpt();
-                echo '<div class="pestro-post-read-more"><a href="' . esc_url(get_permalink()) . '" class="pestro-btn fill-btn">' . esc_html__('Read more', 'pestro') . '</a></div>';
+                echo '<div class="carvia-post-read-more"><a href="' . esc_url(get_permalink()) . '" class="carvia-btn fill-btn">' . esc_html__('Read more', 'carvia') . '</a></div>';
             }
             ?>
         </div><!-- .entry-content -->
@@ -81,7 +81,7 @@
         <?php if ($single_post_tag == true) : ?>
             <div class="entry-footer">
                 <div class="post-tags">
-                    <?php pestro_post_tags(); ?>
+                    <?php carvia_post_tags(); ?>
                 </div>
             </div>
         <?php endif; ?>

@@ -3,18 +3,18 @@
 /**
  * Navigation Menus Registration
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-function pestro_register_menus()
+function carvia_register_menus()
 {
     register_nav_menus([
-        'primary-menu' => esc_html__('Primary Menu', 'pestro'),
-        'mobile-menu'  => esc_html__('Mobile Menu',  'pestro'),
+        'primary-menu' => esc_html__('Primary Menu', 'carvia'),
+        'mobile-menu'  => esc_html__('Mobile Menu',  'carvia'),
     ]);
 }
-add_action('init', 'pestro_register_menus');
+add_action('init', 'carvia_register_menus');

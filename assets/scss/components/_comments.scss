@@ -1,365 +1,365 @@
-@use 'sass:color';
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
+@use "sass:color";
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
 // ─── Comments Section ─────────────────────────────────────────
-.pestro-comments {
-    margin-top: 60px;
+.carvia-comments {
+  margin-top: 60px;
 }
 
 // ─── Comments List Title ──────────────────────────────────────
 
 #reply-title {
-    font-size: 26px !important;
+  font-size: 26px !important;
 }
 // ─── Comment List ─────────────────────────────────────────────
 .comment-list {
-    list-style: none;
-    margin: 0 0 48px;
-    padding: 0;
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
 
-    .comment,
-    .pingback {
-        margin-bottom: 20px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-
-        // Nested replies
-        .children {
-            list-style: none;
-            margin: 24px 0 0 40px;
-            padding: 0;
-
-            @include respond-below(md) {
-                margin-left: 16px;
-            }
-        }
+  .comment,
+  .pingback {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
     }
+
+    // Nested replies
+    .children {
+      list-style: none;
+      margin: 24px 0 0 40px;
+      padding: 0;
+
+      @include respond-below(md) {
+        margin-left: 16px;
+      }
+    }
+  }
 }
 
 // ─── Comment Body ─────────────────────────────────────────────
 .comment-body {
-    display: grid;
-    grid-template-columns: 0 1fr;
-    grid-template-rows: auto;
-    column-gap: 20px;
-    row-gap: 0;
+  display: grid;
+  grid-template-columns: 0 1fr;
+  grid-template-rows: auto;
+  column-gap: 20px;
+  row-gap: 0;
 }
 
 // ─── Avatar ───────────────────────────────────────────────────
 .comment-author {
-    grid-column: 1;
-    grid-row: 1 / 3;
+  grid-column: 1;
+  grid-row: 1 / 3;
 
-    img.avatar {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        border: 2px solid $color-border;
-        display: block;
-        object-fit: cover;
-    }
+  img.avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid $color-border;
+    display: block;
+    object-fit: cover;
+  }
 
-    .fn {
-        display: none; // shown in meta row instead
-    }
+  .fn {
+    display: none; // shown in meta row instead
+  }
 }
 
 // ─── Comment Meta ─────────────────────────────────────────────
 .comment-meta {
-    grid-column: 2;
-    grid-row: 1;
-    @include flex(space-between, center);
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    margin-bottom: 10px;
+  grid-column: 2;
+  grid-row: 1;
+  @include flex(space-between, center);
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 10px;
 }
 
 .comment-author-name {
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 15px;
-    color: $color-heading;
-    line-height: 1;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 15px;
+  color: $color-heading;
+  line-height: 1;
 
-    a {
-        color: inherit;
-        text-decoration: none;
-        @include transition(color);
+  a {
+    color: inherit;
+    text-decoration: none;
+    @include transition(color);
 
-        &:hover {
-            color: $color-secondary;
-        }
+    &:hover {
+      color: $color-secondary;
     }
+  }
 }
 
 .comment-metadata {
-    font-size: 13px;
-    color: $color-body;
-    opacity: 0.7;
+  font-size: 13px;
+  color: $color-body;
+  opacity: 0.7;
 
-    a {
-        color: inherit;
-        text-decoration: none;
+  a {
+    color: inherit;
+    text-decoration: none;
 
-        &:hover {
-            color: $color-secondary;
-        }
+    &:hover {
+      color: $color-secondary;
     }
+  }
 
-    time {
-        display: inline;
-    }
+  time {
+    display: inline;
+  }
 }
 
 // ─── Comment Content ──────────────────────────────────────────
 .comment-content {
-    grid-column: 2;
-    grid-row: 2;
+  grid-column: 2;
+  grid-row: 2;
 
-    p {
-        font-size: 15px;
-        line-height: 1.75;
-        color: $color-body;
-        margin: 0 0 10px;
+  p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: $color-body;
+    margin: 0 0 10px;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 }
 
 // ─── Reply Link ───────────────────────────────────────────────
 .reply {
-    margin-top: 12px;
-    grid-column: 2;
+  margin-top: 12px;
+  grid-column: 2;
 
-    .comment-reply-link {
-        @include flex(flex-start, center);
-        display: inline-flex;
-        gap: 6px;
-        font-size: 13px;
-        font-weight: 600;
-        color: $color-secondary;
-        text-decoration: none;
-        padding: 6px 16px;
-        border: 1.5px solid $color-border;
-        border-radius: $radius-pill;
-        @include transition;
+  .comment-reply-link {
+    @include flex(flex-start, center);
+    display: inline-flex;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-secondary;
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1.5px solid $color-border;
+    border-radius: $radius-pill;
+    @include transition;
 
-        &::before {
-            content: '↩';
-            font-size: 14px;
-            line-height: 1;
-        }
-
-        &:hover {
-            background: $color-primary;
-            border-color: $color-primary;
-            color: $color-heading;
-        }
+    &::before {
+      content: "↩";
+      font-size: 14px;
+      line-height: 1;
     }
+
+    &:hover {
+      background: $color-primary;
+      border-color: $color-primary;
+      color: $color-heading;
+    }
+  }
 }
 
 // ─── Awaiting moderation ──────────────────────────────────────
 .comment-awaiting-moderation {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    color: $color-heading;
-    background: $color-primary;
-    padding: 3px 10px;
-    border-radius: $radius-pill;
-    margin-top: 6px;
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: $color-heading;
+  background: $color-primary;
+  padding: 3px 10px;
+  border-radius: $radius-pill;
+  margin-top: 6px;
 }
 
 // ─── Comments Navigation ──────────────────────────────────────
-.comments-title+.comment-navigation,
+.comments-title + .comment-navigation,
 .comment-navigation {
-    @include flex(space-between, center);
-    margin-bottom: 32px;
-    font-size: 14px;
-    font-weight: 600;
+  @include flex(space-between, center);
+  margin-bottom: 32px;
+  font-size: 14px;
+  font-weight: 600;
 
-    a {
-        color: $color-secondary;
-        text-decoration: none;
-        @include transition(color);
+  a {
+    color: $color-secondary;
+    text-decoration: none;
+    @include transition(color);
 
-        &:hover {
-            color: $color-heading;
-        }
+    &:hover {
+      color: $color-heading;
     }
+  }
 }
 
 // ─── No Comments ─────────────────────────────────────────────
 .no-comments {
-    font-size: 15px;
-    color: $color-body;
-    padding: 20px 24px;
-    background: color.adjust($color-bg, $lightness: -2%);
-    border-radius: $radius-md;
-    border: 1px solid $color-border;
+  font-size: 15px;
+  color: $color-body;
+  padding: 20px 24px;
+  background: color.adjust($color-bg, $lightness: -2%);
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
 }
 
 // ─── Form heading ─────────────────────────────────────────────
 .comments-heading {
-    font-size: $h4-size;
-    font-family: $font-heading;
-    font-weight: $heading-weight;
-    color: $color-heading;
-    margin: 0 0 8px;
-    line-height: $heading-line-height;
+  font-size: $h4-size;
+  font-family: $font-heading;
+  font-weight: $heading-weight;
+  color: $color-heading;
+  margin: 0 0 8px;
+  line-height: $heading-line-height;
 }
 
 // ─── Required note ────────────────────────────────────────────
 .comment-notes {
-    font-size: 13px;
-    color: $color-body;
-    opacity: 0.75;
-    margin-bottom: 28px;
-    display: block;
+  font-size: 13px;
+  color: $color-body;
+  opacity: 0.75;
+  margin-bottom: 28px;
+  display: block;
 }
 
 // ─── Row wrap — name + email side by side ────────────────────
 .comment-form-wrap {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 // ─── Form group (label + input wrapper) ───────────────────────
 .form-group,
 .comment-message {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    label {
-        display: block;
-        font-size: 13px;
-        font-weight: 600;
-        color: $color-heading;
-        margin-bottom: 8px;
-        letter-spacing: 0.02em;
-        text-transform: uppercase;
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: $color-heading;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 
-        span {
-            color: $color-secondary;
-            margin-left: 2px;
-        }
+    span {
+      color: $color-secondary;
+      margin-left: 2px;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"] {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-family: $font-body;
+    color: $color-heading;
+    background: $color-bg;
+    border: 1.5px solid $color-border;
+    border-radius: $radius-md;
+    outline: none;
+    @include transition(border-color, 0.25s);
+
+    &::placeholder {
+      color: $color-body;
+      opacity: 0.45;
     }
 
-    input[type='text'],
-    input[type='email'],
-    input[type='url'] {
-        width: 100%;
-        height: 52px;
-        padding: 0 16px;
-        font-size: 15px;
-        font-family: $font-body;
-        color: $color-heading;
-        background: $color-bg;
-        border: 1.5px solid $color-border;
-        border-radius: $radius-md;
-        outline: none;
-        @include transition(border-color, 0.25s);
+    &:focus {
+      border-color: $color-secondary;
+      background: $color-white;
+    }
+  }
 
-        &::placeholder {
-            color: $color-body;
-            opacity: 0.45;
-        }
+  textarea {
+    width: 100%;
+    min-height: 140px;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: $font-body;
+    color: $color-heading;
+    background: $color-bg;
+    border: 1.5px solid $color-border;
+    border-radius: $radius-md;
+    outline: none;
+    resize: vertical;
+    line-height: 1.65;
+    @include transition(border-color, 0.25s);
 
-        &:focus {
-            border-color: $color-secondary;
-            background: $color-white;
-        }
+    &::placeholder {
+      color: $color-body;
+      opacity: 0.45;
     }
 
-    textarea {
-        width: 100%;
-        min-height: 140px;
-        padding: 14px 16px;
-        font-size: 15px;
-        font-family: $font-body;
-        color: $color-heading;
-        background: $color-bg;
-        border: 1.5px solid $color-border;
-        border-radius: $radius-md;
-        outline: none;
-        resize: vertical;
-        line-height: 1.65;
-        @include transition(border-color, 0.25s);
-
-        &::placeholder {
-            color: $color-body;
-            opacity: 0.45;
-        }
-
-        &:focus {
-            border-color: $color-secondary;
-            background: $color-white;
-        }
+    &:focus {
+      border-color: $color-secondary;
+      background: $color-white;
     }
+  }
 }
 
 // ─── Cookies consent checkbox (if enabled) ────────────────────
 .comment-form-cookies-consent {
-    @include flex(flex-start, center);
-    gap: 10px;
-    margin-bottom: 20px;
+  @include flex(flex-start, center);
+  gap: 10px;
+  margin-bottom: 20px;
 
-    input[type='checkbox'] {
-        width: 18px;
-        height: 18px;
-        accent-color: $color-secondary;
-        cursor: pointer;
-        flex-shrink: 0;
-    }
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: $color-secondary;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
 
-    label {
-        font-size: 13px;
-        color: $color-body;
-        cursor: pointer;
-        margin: 0;
-    }
+  label {
+    font-size: 13px;
+    color: $color-body;
+    cursor: pointer;
+    margin: 0;
+  }
 }
 
 // ─── Submit button ────────────────────────────────────────────
 .form-submit {
-    margin: 8px 0 0;
+  margin: 8px 0 0;
 }
 
 .comment-btn {
-    @include btn-base;
-    background: $color-deep-green;
-    border-color: $color-secondary;
-    color: $color-white;
-    padding: 18px 40px;
-    font-size: 15px;
-    border: 0;
-    &:hover {
-        background-color: $color-primary;
-        color: $color-heading;
-    }
+  @include btn-base;
+  background: $color-deep-green;
+  border-color: $color-secondary;
+  color: $color-white;
+  padding: 18px 40px;
+  font-size: 15px;
+  border: 0;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-heading;
+  }
 }
 
 // ─── Cancel reply link ────────────────────────────────────────
 #cancel-comment-reply-link {
-    font-size: 13px;
-    color: $color-body;
-    text-decoration: none;
-    margin-left: 16px;
-    opacity: 0.7;
-    @include transition(opacity);
+  font-size: 13px;
+  color: $color-body;
+  text-decoration: none;
+  margin-left: 16px;
+  opacity: 0.7;
+  @include transition(opacity);
 
-    &:hover {
-        opacity: 1;
-    }
+  &:hover {
+    opacity: 1;
+  }
 }
 
 h3.comments-title {
-    font-size: 25px;
+  font-size: 25px;
 }
 .comment-author.vcard {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

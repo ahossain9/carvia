@@ -3,7 +3,7 @@
 /**
  * Redux Framework Configuration
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
@@ -14,7 +14,7 @@ if (! class_exists('Redux')) {
     return;
 }
 
-$opt_name = 'pestro_options';
+$opt_name = 'carvia_options';
 $theme    = wp_get_theme();
 
 // ─── Global Args ──────────────────────────────────────────────
@@ -24,8 +24,8 @@ $args = [
     'display_version'      => $theme->get('Version'),
     'menu_type'            => 'menu',
     'allow_sub_menu'       => true,
-    'menu_title'           => esc_html__('Pestro Options', 'pestro'),
-    'page_title'           => esc_html__('Pestro Options', 'pestro'),
+    'menu_title'           => esc_html__('Carvia Options', 'carvia'),
+    'page_title'           => esc_html__('Carvia Options', 'carvia'),
     'google_api_protocol'  => 'https',
     'async_typography'     => true,
     'admin_bar'            => true,
@@ -62,7 +62,7 @@ $args = [
 Redux::set_args($opt_name, $args);
 
 // ─── Load Sections ─────────────────────────────────────────────
-$sections_dir = PESTRO_INC . 'redux/sections/';
+$sections_dir = CARVIA_INC . 'redux/sections/';
 $sections     = [
     'general',
     'header',

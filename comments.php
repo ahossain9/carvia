@@ -3,7 +3,7 @@
 /**
  * Comments Template
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (post_password_required()) {
@@ -11,7 +11,7 @@ if (post_password_required()) {
 }
 ?>
 
-<div id="comments" class="pestro-comments">
+<div id="comments" class="carvia-comments">
 
 	<?php if (have_comments()) : ?>
 
@@ -21,13 +21,13 @@ if (post_password_required()) {
 			if ('1' === $comments_count) {
 				printf(
 					/* translators: 1: post title */
-					esc_html__('One comment on &ldquo;%1$s&rdquo;', 'pestro'),
+					esc_html__('One comment on &ldquo;%1$s&rdquo;', 'carvia'),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf(
 					/* translators: 1: comment count, 2: post title */
-					esc_html(_nx('%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $comments_count, 'comments title', 'pestro')),
+					esc_html(_nx('%1$s comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', $comments_count, 'comments title', 'carvia')),
 					number_format_i18n($comments_count),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -49,7 +49,7 @@ if (post_password_required()) {
 	<?php endif; ?>
 
 	<?php if (! comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) : ?>
-		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'pestro'); ?></p>
+		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'carvia'); ?></p>
 	<?php endif; ?>
 
 	<?php

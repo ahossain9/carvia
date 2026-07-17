@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Pestro Full Width
+ * Template Name: Carvia Full Width
  */
 
 get_header();

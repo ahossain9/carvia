@@ -3,56 +3,55 @@
 /**
  * Scripts and Styles Enqueue
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-if (! function_exists('pestro_scripts')) :
-    function pestro_scripts()
+if (! function_exists('carvia_scripts')) :
+    function carvia_scripts()
     {
 
         // ─── Google Fonts ─────────────────────────────────────
         wp_enqueue_style(
-            'pestro-google-fonts',
+            'carvia-google-fonts',
             'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap',
             [],
             null
         );
 
         // ─── Main Compiled CSS ────────────────────────────────
-        wp_enqueue_style( 'pestro-style', PESTRO_ASSETS . 'css/style.min.css', ['pestro-google-fonts'], PESTRO_VERSION );
-        wp_enqueue_style( 'hugeicon-style', PESTRO_ASSETS . 'css/hugeicon.min.css', ['pestro-google-fonts'], PESTRO_VERSION );
+        wp_enqueue_style('carvia-style', CARVIA_ASSETS . 'css/style.min.css', ['carvia-google-fonts'], CARVIA_VERSION);
+        wp_enqueue_style('hugeicon-style', CARVIA_ASSETS . 'css/hugeicon.min.css', ['carvia-google-fonts'], CARVIA_VERSION);
 
         // ─── WordPress Block Library ──────────────────────────
         wp_enqueue_style('wp-block-library');
 
         // ─── Main JS ──────────────────────────────────────────
-        wp_enqueue_script( 'pestro-main', PESTRO_ASSETS . 'js/main.min.js', ['jquery'], PESTRO_VERSION, true );
+        wp_enqueue_script('carvia-main', CARVIA_ASSETS . 'js/main.min.js', ['jquery'], CARVIA_VERSION, true);
 
         // // ─── Comments ─────────────────────────────────────────
         if (is_singular() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
-
     }
 endif;
 
-add_action('wp_enqueue_scripts', 'pestro_scripts');
+add_action('wp_enqueue_scripts', 'carvia_scripts');
 
 
 /**
  * Admin styles.
  */
-function pestro_admin_scripts()
+function carvia_admin_scripts()
 {
     wp_enqueue_style(
-        'pestro-admin',
-        PESTRO_ASSETS . 'css/admin.min.css',
+        'carvia-admin',
+        CARVIA_ASSETS . 'css/admin.min.css',
         [],
-        PESTRO_VERSION
+        CARVIA_VERSION
     );
 }
-add_action('admin_enqueue_scripts', 'pestro_admin_scripts');
+add_action('admin_enqueue_scripts', 'carvia_admin_scripts');

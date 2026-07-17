@@ -1,9 +1,9 @@
 <?php
 
 // Safely retrieve a value from an array by key, with a default fallback.
-if (!function_exists('pestro_array_get')) {
+if (!function_exists('carvia_array_get')) {
 
-    function pestro_array_get($array, $key, $default = null)
+    function carvia_array_get($array, $key, $default = null)
     {
         if (!is_array($array)) {
             return $default;
@@ -18,12 +18,12 @@ if (!function_exists('pestro_array_get')) {
  */
 
 if (!function_exists('loop_columns')) {
-    function pestro_product_per_row()
+    function carvia_product_per_row()
     {
         return 3; // 3 products per row
     }
 }
-add_filter('loop_shop_columns', 'pestro_product_per_row', 999);
+add_filter('loop_shop_columns', 'carvia_product_per_row', 999);
 
 
 /**
@@ -49,45 +49,45 @@ function remove_shop_page_title()
 /**
  * Change WooCoomerce product markup
  */
-function pestro_before_shop_loop_item_title()
+function carvia_before_shop_loop_item_title()
 {
-    echo '<div class="pestro-wc-product-info">';
+    echo '<div class="carvia-wc-product-info">';
     woocommerce_template_loop_add_to_cart();
-    echo '<h2 class="woocommerce-loop-product__title pestro-wc-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
+    echo '<h2 class="woocommerce-loop-product__title carvia-wc-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 }
-add_action('woocommerce_before_shop_loop_item_title', 'pestro_before_shop_loop_item_title', 10);
+add_action('woocommerce_before_shop_loop_item_title', 'carvia_before_shop_loop_item_title', 10);
 
-function pestro_after_shop_loop_item_title()
+function carvia_after_shop_loop_item_title()
 {
     echo '</div>';
 }
-add_action('woocommerce_after_shop_loop_item_title', 'pestro_after_shop_loop_item_title', 10);
+add_action('woocommerce_after_shop_loop_item_title', 'carvia_after_shop_loop_item_title', 10);
 
 
-function pestro_before_shop_loop_item()
+function carvia_before_shop_loop_item()
 {
     echo '<div class="product-content">';
 }
-add_action('woocommerce_before_shop_loop_item', 'pestro_before_shop_loop_item', 10);
+add_action('woocommerce_before_shop_loop_item', 'carvia_before_shop_loop_item', 10);
 
-function pestro_after_shop_loop_item()
+function carvia_after_shop_loop_item()
 {
     echo '</div>';
 }
-add_action('woocommerce_after_shop_loop_item', 'pestro_after_shop_loop_item', 10);
+add_action('woocommerce_after_shop_loop_item', 'carvia_after_shop_loop_item', 10);
 
 /**
  * WooCommerce  Search Field
  *
  */
-function pestro_custom_product_searchform($form)
+function carvia_custom_product_searchform($form)
 {
 
     $form = '
         <form method="get" id="searchform" action="' . esc_url(home_url('/')) . '">
             <div class="wc-search-form">
-                <label class="screen-reader-text" for="s">' . esc_html__('Search for:', 'pestro') . '</label>
-                <input class="wc-search-input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __('Search', 'pestro') . '"/>
+                <label class="screen-reader-text" for="s">' . esc_html__('Search for:', 'carvia') . '</label>
+                <input class="wc-search-input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' . __('Search', 'carvia') . '"/>
                 <button class="wc-search-btn" type="submit" id="searchsubmit"><i class="fa fa-search"></i></button>  
                 <input type="hidden" name="post_type" value="product" />
             </div>
@@ -95,11 +95,11 @@ function pestro_custom_product_searchform($form)
 
     return $form;
 }
-add_filter('get_product_search_form', 'pestro_custom_product_searchform');
+add_filter('get_product_search_form', 'carvia_custom_product_searchform');
 
 
 // Get a list of published posts for a given post type for Redux Framerwork
-function pestro_get_layout_posts_for_redux($post_type = '')
+function carvia_get_layout_posts_for_redux($post_type = '')
 {
     if (empty($post_type)) {
         return [];
@@ -121,5 +121,3 @@ function pestro_get_layout_posts_for_redux($post_type = '')
 
     return $options;
 }
-
-

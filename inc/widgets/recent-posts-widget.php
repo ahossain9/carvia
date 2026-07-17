@@ -1,18 +1,18 @@
 <?php
 
 /**
- * Pestro Recent Posts Widget
+ * Carvia Recent Posts Widget
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-if (! class_exists('Pestro_Recent_Posts_Widget')) :
+if (! class_exists('Carvia_Recent_Posts_Widget')) :
 
-    class Pestro_Recent_Posts_Widget extends WP_Widget
+    class Carvia_Recent_Posts_Widget extends WP_Widget
     {
 
         /**
@@ -21,11 +21,11 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
         public function __construct()
         {
             parent::__construct(
-                'pestro_recent_posts',
-                esc_html__('Pestro: Recent Posts', 'pestro'),
+                'carvia_recent_posts',
+                esc_html__('Carvia: Recent Posts', 'carvia'),
                 [
-                    'description' => esc_html__('Display recent posts with thumbnail, title, and date.', 'pestro'),
-                    'classname'   => 'pestro-recent-posts-widget',
+                    'description' => esc_html__('Display recent posts with thumbnail, title, and date.', 'carvia'),
+                    'classname'   => 'carvia-recent-posts-widget',
                 ]
             );
         }
@@ -38,7 +38,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
          */
         public function widget($args, $instance)
         {
-            $title          = ! empty($instance['title']) ? $instance['title'] : esc_html__('Recent Posts', 'pestro');
+            $title          = ! empty($instance['title']) ? $instance['title'] : esc_html__('Recent Posts', 'carvia');
             $number         = ! empty($instance['number']) ? absint($instance['number']) : 5;
             $show_thumbnail = isset($instance['show_thumbnail']) ? (bool) $instance['show_thumbnail'] : true;
             $show_title     = isset($instance['show_title']) ? (bool) $instance['show_title'] : true;
@@ -59,30 +59,30 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
             echo wp_kses_post($args['before_title']) . esc_html($title) . wp_kses_post($args['after_title']);
 
             if ($recent_posts->have_posts()) {
-                echo '<ul class="pestro-recent-posts-list">';
+                echo '<ul class="carvia-recent-posts-list">';
                 while ($recent_posts->have_posts()) {
                     $recent_posts->the_post();
                     $post_id  = get_the_ID();
                     $post_url = esc_url(get_permalink());
 ?>
-                    <li class="pestro-recent-post-item">
+                    <li class="carvia-recent-post-item">
 
                         <?php if ($show_thumbnail && has_post_thumbnail()) : ?>
                             <a href="<?php echo esc_url($post_url); ?>"
-                                class="pestro-rp-thumb"
+                                class="carvia-rp-thumb"
                                 aria-hidden="true"
                                 tabindex="-1">
-                                <?php the_post_thumbnail('pestro-thumb-small', [
+                                <?php the_post_thumbnail('carvia-thumb-small', [
                                     'alt'     => esc_attr(get_the_title()),
                                     'loading' => 'lazy',
                                 ]); ?>
                             </a>
                         <?php endif; ?>
 
-                        <div class="pestro-rp-content">
+                        <div class="carvia-rp-content">
 
                             <?php if ($show_title) : ?>
-                                <h4 class="pestro-rp-title">
+                                <h4 class="carvia-rp-title">
                                     <a href="<?php echo esc_url($post_url); ?>">
                                         <?php echo esc_html(get_the_title()); ?>
                                     </a>
@@ -90,7 +90,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
                             <?php endif; ?>
 
                             <?php if ($show_date) : ?>
-                                <time class="pestro-rp-date"
+                                <time class="carvia-rp-date"
                                     datetime="<?php echo esc_attr(get_the_date('c')); ?>">
                                     <?php echo esc_html(get_the_date()); ?>
                                 </time>
@@ -103,7 +103,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
                 echo '</ul>';
                 wp_reset_postdata();
             } else {
-                echo '<p>' . esc_html__('No recent posts found.', 'pestro') . '</p>';
+                echo '<p>' . esc_html__('No recent posts found.', 'carvia') . '</p>';
             }
 
             echo wp_kses_post($args['after_widget']);
@@ -116,7 +116,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
          */
         public function form($instance)
         {
-            $title          = ! empty($instance['title'])    ? $instance['title']    : esc_html__('Recent Posts', 'pestro');
+            $title          = ! empty($instance['title'])    ? $instance['title']    : esc_html__('Recent Posts', 'carvia');
             $number         = ! empty($instance['number'])   ? absint($instance['number']) : 5;
             $show_thumbnail = isset($instance['show_thumbnail']) ? (bool) $instance['show_thumbnail'] : true;
             $show_title     = isset($instance['show_title'])     ? (bool) $instance['show_title']     : true;
@@ -124,7 +124,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
             ?>
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('title')); ?>">
-                    <?php esc_html_e('Title:', 'pestro'); ?>
+                    <?php esc_html_e('Title:', 'carvia'); ?>
                 </label>
                 <input class="widefat"
                     id="<?php echo esc_attr($this->get_field_id('title')); ?>"
@@ -135,7 +135,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
 
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('number')); ?>">
-                    <?php esc_html_e('Number of Posts:', 'pestro'); ?>
+                    <?php esc_html_e('Number of Posts:', 'carvia'); ?>
                 </label>
                 <input class="tiny-text"
                     id="<?php echo esc_attr($this->get_field_id('number')); ?>"
@@ -154,7 +154,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
                     value="1"
                     <?php checked($show_thumbnail); ?>>
                 <label for="<?php echo esc_attr($this->get_field_id('show_thumbnail')); ?>">
-                    <?php esc_html_e('Show Thumbnail', 'pestro'); ?>
+                    <?php esc_html_e('Show Thumbnail', 'carvia'); ?>
                 </label>
             </p>
 
@@ -165,7 +165,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
                     value="1"
                     <?php checked($show_title); ?>>
                 <label for="<?php echo esc_attr($this->get_field_id('show_title')); ?>">
-                    <?php esc_html_e('Show Title', 'pestro'); ?>
+                    <?php esc_html_e('Show Title', 'carvia'); ?>
                 </label>
             </p>
 
@@ -176,7 +176,7 @@ if (! class_exists('Pestro_Recent_Posts_Widget')) :
                     value="1"
                     <?php checked($show_date); ?>>
                 <label for="<?php echo esc_attr($this->get_field_id('show_date')); ?>">
-                    <?php esc_html_e('Show Date', 'pestro'); ?>
+                    <?php esc_html_e('Show Date', 'carvia'); ?>
                 </label>
             </p>
 <?php
@@ -206,22 +206,21 @@ endif; // class_exists
 /**
  * Register widget and widget areas.
  */
-function pestro_register_sidebars()
+function carvia_register_sidebars()
 {
 
-    register_widget('Pestro_Recent_Posts_Widget');
+    register_widget('Carvia_Recent_Posts_Widget');
 
     // Blog Sidebar
     register_sidebar([
-        'name'          => esc_html__('Blog Sidebar', 'pestro'),
+        'name'          => esc_html__('Blog Sidebar', 'carvia'),
         'id'            => 'blog-sidebar',
-        'description'   => esc_html__('Widgets in this area will be shown in the blog/archive sidebar.', 'pestro'),
+        'description'   => esc_html__('Widgets in this area will be shown in the blog/archive sidebar.', 'carvia'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
     ]);
-    
 }
 
-add_action('widgets_init', 'pestro_register_sidebars');
+add_action('widgets_init', 'carvia_register_sidebars');

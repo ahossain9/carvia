@@ -3,14 +3,14 @@
 /**
  * Default Header Template Part
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-$logo_data   = pestro_option('header_logo', []);
+$logo_data   = carvia_option('header_logo', []);
 $logo_url    = ! empty($logo_data['url']) ? $logo_data['url'] : '';
 ?>
 
@@ -33,7 +33,7 @@ $logo_url    = ! empty($logo_data['url']) ? $logo_data['url'] : '';
         </div><!-- header logo -->
 
         <!-- Primary Nav -->
-        <nav class="header-nav text-right" id="site-navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'pestro'); ?>">
+        <nav class="header-nav text-right" id="site-navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'carvia'); ?>">
             <?php
             $has_menu = has_nav_menu('primary-menu');
 
@@ -48,7 +48,7 @@ $logo_url    = ! empty($logo_data['url']) ? $logo_data['url'] : '';
             elseif (current_user_can('manage_options')) : ?>
                 <a href="<?php echo esc_url(admin_url('nav-menus.php')); ?>"
                     class="header-create-menu">
-                    <?php esc_html_e('+ Create a Menu', 'pestro'); ?>
+                    <?php esc_html_e('+ Create a Menu', 'carvia'); ?>
                 </a>
 
             <?php endif; ?>

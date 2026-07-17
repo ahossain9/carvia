@@ -2,7 +2,7 @@
 
 /**
  * Redux: Footer Section
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
@@ -10,17 +10,17 @@ if (! defined('ABSPATH')) {
 }
 
 /**
- * Build dynamic footer choices including Pestro Footer CPT
+ * Build dynamic footer choices including Carvia Footer CPT
  */
-function pestro_get_footer_type_choices()
-{ // Changed prefix to pestro
+function carvia_get_footer_type_choices()
+{ // Changed prefix to carvia
     $choices = [
-        'default' => esc_html__('Theme Footer — Default', 'pestro'),
+        'default' => esc_html__('Theme Footer — Default', 'carvia'),
     ];
 
-    // 2. Query the 'pestro_footer' custom post type
+    // 2. Query the 'carvia_footer' custom post type
     $custom_footers = get_posts([
-        'post_type'      => 'pestro-footer',
+        'post_type'      => 'carvia-footer',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
     ]);
@@ -31,28 +31,28 @@ function pestro_get_footer_type_choices()
         }
     }
 
-    return apply_filters('pestro_redux_footer_choices', $choices);
+    return apply_filters('carvia_redux_footer_choices', $choices);
 }
 
-Redux::set_section('pestro_options', [
-    'title'  => esc_html__('Footer', 'pestro'),
+Redux::set_section('carvia_options', [
+    'title'  => esc_html__('Footer', 'carvia'),
     'id'     => 'footer',
     'icon'   => 'el el-credit-card',
     'fields' => [
         [
             'id'       => 'footer_layout',
             'type'     => 'select',
-            'title'    => esc_html__('Footer Template', 'pestro'), // Fixed text domain
-            'subtitle' => esc_html__('Choose a footer layout. Custom layouts from Pestro Footer appear here.', 'pestro'),
-            'options'  => pestro_get_footer_type_choices(),
+            'title'    => esc_html__('Footer Template', 'carvia'), // Fixed text domain
+            'subtitle' => esc_html__('Choose a footer layout. Custom layouts from Carvia Footer appear here.', 'carvia'),
+            'options'  => carvia_get_footer_type_choices(),
             'default'  => 'default',
         ],
         [
             'id'      => 'footer_copyright',
             'type'    => 'text',
-            'title'   => esc_html__('Copyright Text', 'pestro'),
+            'title'   => esc_html__('Copyright Text', 'carvia'),
             // Note: wp_date('Y') is better than date('Y') for WP sites
-            'default' => sprintf(esc_html__('© %s Pestro. All rights reserved.', 'pestro'), wp_date('Y')),
+            'default' => sprintf(esc_html__('© %s Carvia. All rights reserved.', 'carvia'), wp_date('Y')),
         ],
     ],
 ]);

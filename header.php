@@ -3,32 +3,32 @@
 /**
  * Header Template
  *
- * @package Pestro
+ * @package Carvia
  */
 
-$header_layout      = pestro_option('header_variation', 'layout-one');
-$inner_page_header  = pestro_option('inner_header_switcher', false);
-$preloader          = pestro_option('preloader_enable', true);
-$page_header        = pestro_option('show_page_header', true);
-$logo_data          = pestro_option('header_logo', []);
-$logo_width         = pestro_option('header_logo_width', '');
+$header_layout      = carvia_option('header_variation', 'layout-one');
+$inner_page_header  = carvia_option('inner_header_switcher', false);
+$preloader          = carvia_option('preloader_enable', true);
+$page_header        = carvia_option('show_page_header', true);
+$logo_data          = carvia_option('header_logo', []);
+$logo_width         = carvia_option('header_logo_width', '');
 $logo_url           = !empty($logo_data['url']) ? $logo_data['url'] : '';
 
 $header_type  = 'default';
 $header_class = 'default';
 
-if (class_exists('Redux') && function_exists('pestro_option')) {
-	
+if (class_exists('Redux') && function_exists('carvia_option')) {
+
 	// Redux active — homepage layout becomes the fallback
-	$header_type  = pestro_option('header_variation', 'layout-one');
+	$header_type  = carvia_option('header_variation', 'layout-one');
 	$header_class = $header_type;
 
 	if (is_front_page()) {
-		$header_type  = pestro_option('header_variation', 'layout-one');
+		$header_type  = carvia_option('header_variation', 'layout-one');
 		$header_class = $header_type;
 	} elseif (is_singular()) {
 
-		$page_header_layout = get_post_meta(get_the_ID(), '_pestro_header_layout', true);
+		$page_header_layout = get_post_meta(get_the_ID(), '_carvia_header_layout', true);
 
 		if (!empty($page_header_layout) && !is_numeric($page_header_layout)) {
 			$header_type  = $page_header_layout;
@@ -37,7 +37,7 @@ if (class_exists('Redux') && function_exists('pestro_option')) {
 			$header_type  = $page_header_layout;
 			$header_class = 'inner-elementor-' . $header_type;
 		} elseif ($inner_page_header == true) {
-			$inner_layout = pestro_option('inner_header_layout', 'layout-one');
+			$inner_layout = carvia_option('inner_header_layout', 'layout-one');
 			$header_type  = $inner_layout;
 			$header_class = 'inner-page-redux-' . $inner_layout;
 		}
@@ -59,13 +59,13 @@ if (class_exists('Redux') && function_exists('pestro_option')) {
 
 	<!-- Preloader -->
 	<?php if ($preloader == true) : ?>
-		<div id="pestro-preloader" aria-hidden="true">
-			<div class="pestro-preloader__spinner"></div>
+		<div id="carvia-preloader" aria-hidden="true">
+			<div class="carvia-preloader__spinner"></div>
 		</div>
 	<?php endif; ?>
 
 	<a class="screen-reader-text" href="#content">
-		<?php esc_html_e('Skip to content', 'pestro'); ?>
+		<?php esc_html_e('Skip to content', 'carvia'); ?>
 	</a>
 
 	<div id="page" class="site">

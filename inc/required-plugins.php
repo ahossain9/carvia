@@ -1,47 +1,47 @@
 <?php
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-add_action('tgmpa_register', 'pestro_register_required_plugins');
+add_action('tgmpa_register', 'carvia_register_required_plugins');
 
-function pestro_register_required_plugins()
+function carvia_register_required_plugins()
 {
 	$plugins = array(
 		array(
-			'name'      => esc_html__('Elementor', 'pestro'),
+			'name'      => esc_html__('Elementor', 'carvia'),
 			'slug'      => 'elementor',
 			'required'  => true,
 		),
 		array(
-			'name'     => esc_html__('Pestro Core', 'pestro'),
-			'slug'     => 'pestro-core',
-			'source'   => get_template_directory() . '/inc/plugins/pestro-core.zip',
+			'name'     => esc_html__('Carvia Core', 'carvia'),
+			'slug'     => 'carvia-core',
+			'source'   => get_template_directory() . '/inc/plugins/carvia-core.zip',
 			'required' => true
 		),
 		array(
-			'name'     => esc_html__('Redux Framework', 'pestro'),
+			'name'     => esc_html__('Redux Framework', 'carvia'),
 			'slug'     => 'redux-framework',
 			'required' => true
 		),
 		array(
-			'name'     => esc_html__('One Click Demo Import', 'pestro'),
+			'name'     => esc_html__('One Click Demo Import', 'carvia'),
 			'slug'     => 'one-click-demo-import',
 			'required' => false,
 		),
 		array(
-			'name'     => esc_html__('CMB2', 'pestro'),
+			'name'     => esc_html__('CMB2', 'carvia'),
 			'slug'     => 'cmb2',
 			'required' => true,
 		),
 		array(
-			'name'     => esc_html__('WP Fluent Forms', 'pestro'),
+			'name'     => esc_html__('WP Fluent Forms', 'carvia'),
 			'slug'     => 'fluentform',
 			'required' => false,
 		),
 	);
 
 	$config = array(
-		'id'           => 'pestro',
+		'id'           => 'carvia',
 		'default_path' => '',
-		'menu'         => 'pestro-install-plugins',
+		'menu'         => 'carvia-install-plugins',
 		'has_notices'  => true,
 		'dismissable'  => true,
 		'dismiss_msg'  => '',

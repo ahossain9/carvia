@@ -3,13 +3,13 @@
 /**
  * Page Template
  *
- * @package Pestro
+ * @package Carvia
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main pestro-page">
+<main id="primary" class="site-main carvia-page">
 	<div class="container">
 		<?php
 		while (have_posts()) :
@@ -20,7 +20,7 @@ get_header();
 					<?php
 					the_content();
 					wp_link_pages([
-						'before' => '<div class="page-links">' . esc_html__('Pages:', 'pestro'),
+						'before' => '<div class="page-links">' . esc_html__('Pages:', 'carvia'),
 						'after'  => '</div>',
 					]);
 					?>

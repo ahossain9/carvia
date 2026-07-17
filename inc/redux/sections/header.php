@@ -3,7 +3,7 @@
 /**
  * Redux: Header Section
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
@@ -11,17 +11,17 @@ if (! defined('ABSPATH')) {
 }
 
 // ── Build dynamic header choices including Elementor templates ──
-function pestro_get_header_type_choices()
+function carvia_get_header_type_choices()
 {
     // 1. Define your hardcoded theme headers
     $choices = [
-        'layout-one'         => esc_html__('Header One',      'pestro'),
-        'layout-transparent' => esc_html__('Header Transparent', 'pestro'),
+        'layout-one'         => esc_html__('Header One',      'carvia'),
+        'layout-transparent' => esc_html__('Header Transparent', 'carvia'),
     ];
 
-    // 2. Query the 'pestro_header' custom post type
+    // 2. Query the 'carvia_header' custom post type
     $custom_headers = get_posts([
-        'post_type'      => 'pestro-header',
+        'post_type'      => 'carvia-header',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
     ]);
@@ -33,13 +33,13 @@ function pestro_get_header_type_choices()
         }
     }
 
-    return apply_filters('pestro_redux_header_choices', $choices);
+    return apply_filters('carvia_redux_header_choices', $choices);
 }
 
-Redux::set_section('pestro_options', [
-    'title'  => esc_html__('Header', 'pestro'),
+Redux::set_section('carvia_options', [
+    'title'  => esc_html__('Header', 'carvia'),
     'id'     => 'header',
-    'desc'   => esc_html__('Configure header settings.', 'pestro'),
+    'desc'   => esc_html__('Configure header settings.', 'carvia'),
     'icon'   => 'el el-website',
     'fields' => [
 
@@ -47,42 +47,42 @@ Redux::set_section('pestro_options', [
         [
             'id'       => 'header_logo',
             'type'     => 'media',
-            'title'    => esc_html__('Header Logo', 'pestro'),
-            'subtitle' => esc_html__('Upload your main header logo.', 'pestro'),
-            'default'  => ['url' => PESTRO_ASSETS . 'images/logo.png'],
-            'desc' => esc_html('Recommended logo size 198x36 pixel', 'pestro')
+            'title'    => esc_html__('Header Logo', 'carvia'),
+            'subtitle' => esc_html__('Upload your main header logo.', 'carvia'),
+            'default'  => ['url' => CARVIA_ASSETS . 'images/logo.png'],
+            'desc' => esc_html('Recommended logo size 198x36 pixel', 'carvia')
         ],
 
         // ── Header Variation ──────────────────────────────────
         [
             'id'       => 'header_variation',
             'type'     => 'select',
-            'title'    => esc_html__('Header Layouts', 'pestro'),
-            'subtitle' => esc_html__('Choose a header for the home page. Elementor templates appear here automatically once created.', 'pestro'),
-            'options'  => pestro_get_header_type_choices(),
+            'title'    => esc_html__('Header Layouts', 'carvia'),
+            'subtitle' => esc_html__('Choose a header for the home page. Elementor templates appear here automatically once created.', 'carvia'),
+            'options'  => carvia_get_header_type_choices(),
             'default'  => 'layout-transparent',
         ],
         [
             'id'       => 'inner_header_switcher',
             'type'     => 'switch',
-            'title'    => esc_html__('Inner Page Header', 'pestro'),
+            'title'    => esc_html__('Inner Page Header', 'carvia'),
             'indent'   => true,
             'default'  => false,
         ],
         [
             'id'       => 'inner_header_layout',
             'type'     => 'select',
-            'title'    => esc_html__('Inner Pages Header', 'pestro'),
-            'subtitle' => esc_html__('Choose a header for all inner pages.', 'pestro'),
+            'title'    => esc_html__('Inner Pages Header', 'carvia'),
+            'subtitle' => esc_html__('Choose a header for all inner pages.', 'carvia'),
             'required' => ['inner_header_switcher', '=', true],
-            'options'  => pestro_get_header_type_choices(),
+            'options'  => carvia_get_header_type_choices(),
             'default'  => 'layout-transparent',
         ],
         [
             'id'          => 'header_logo_width',
             'type'        => 'dimensions',
             'units'       => ['em', 'px', '%'],
-            'title'       => esc_html__('Button Border Radius', 'pestro'),
+            'title'       => esc_html__('Button Border Radius', 'carvia'),
             'output'      => ['.header-button a'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -93,8 +93,8 @@ Redux::set_section('pestro_options', [
         [
             'id'       => 'header_button_switcher',
             'type'     => 'section',
-            'title'    => esc_html__('Header Button', 'pestro'),
-            'subtitle' => esc_html__('Configure the header button settings.', 'pestro'),
+            'title'    => esc_html__('Header Button', 'carvia'),
+            'subtitle' => esc_html__('Configure the header button settings.', 'carvia'),
             'indent'   => true,
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -105,7 +105,7 @@ Redux::set_section('pestro_options', [
         [
             'id'       => 'header_button',
             'type'     => 'switch',
-            'title'    => esc_html__('Enable/Disable Button', 'pestro'),
+            'title'    => esc_html__('Enable/Disable Button', 'carvia'),
             'required' => ['header_variation', '=', 'layout-one'],
             'indent'   => true,
             'default'  => true,
@@ -113,7 +113,7 @@ Redux::set_section('pestro_options', [
         [
             'id'       => 'header_button_text',
             'type'     => 'text',
-            'title'    => esc_html__('Button Text', 'pestro'),
+            'title'    => esc_html__('Button Text', 'carvia'),
             'required' => [
                 ['header_variation', '=', 'layout-one'],
                 ['header_variation', '=', 'layout-transparent'],
@@ -131,7 +131,7 @@ Redux::set_section('pestro_options', [
             'background-size'       => false,
             'preview'               => false,
             'transparent'           => false,
-            'title'                 => esc_html__('Button Background', 'pestro'),
+            'title'                 => esc_html__('Button Background', 'carvia'),
             'output'                => ['.header-button a'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -149,7 +149,7 @@ Redux::set_section('pestro_options', [
             'background-size'       => false,
             'preview'               => false,
             'transparent'           => false,
-            'title'                 => esc_html__('Button Hover Background', 'pestro'),
+            'title'                 => esc_html__('Button Hover Background', 'carvia'),
             'output'                => ['.header-button a:hover'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -161,7 +161,7 @@ Redux::set_section('pestro_options', [
             'id'          => 'header_button_text_color',
             'type'        => 'color',
             'transparent' => false,
-            'title'       => esc_html__('Button Text Color', 'pestro'),
+            'title'       => esc_html__('Button Text Color', 'carvia'),
             'output'      => ['.header-button a'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -173,7 +173,7 @@ Redux::set_section('pestro_options', [
             'id'          => 'header_button_hover_text_color',
             'type'        => 'color',
             'transparent' => false,
-            'title'       => esc_html__('Button Text Hover Color', 'pestro'),
+            'title'       => esc_html__('Button Text Hover Color', 'carvia'),
             'output'      => ['.header-button a:hover'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],
@@ -185,7 +185,7 @@ Redux::set_section('pestro_options', [
             'id'          => 'header_button_border_radius',
             'type'        => 'dimensions',
             'units'       => ['em', 'px', '%'],
-            'title'       => esc_html__('Button Border Radius', 'pestro'),
+            'title'       => esc_html__('Button Border Radius', 'carvia'),
             'output'      => ['.header-button a'],
             'required' => [
                 ['header_variation', '=', 'layout-one'],

@@ -3,15 +3,15 @@
 /**
  * Main Index Template
  *
- * @package Pestro
+ * @package Carvia
  */
 
 get_header();
 
-$layout  = pestro_option('blog_layout', 'list');
+$layout  = carvia_option('blog_layout', 'list');
 $layout  = in_array($layout, ['list', 'grid'], true) ? $layout : 'list';
 
-$sidebar = ('grid' === $layout) ? 'none' : pestro_option('blog_sidebar', 'right');
+$sidebar = ('grid' === $layout) ? 'none' : carvia_option('blog_sidebar', 'right');
 
 $has_sidebar = ('none' !== $sidebar) && is_active_sidebar('blog-sidebar');
 
@@ -19,13 +19,13 @@ $content_class = $has_sidebar ? 'col-lg-8 col-md-7' : 'col-12';
 $sidebar_class = 'col-lg-4 col-md-5';
 ?>
 
-<main id="primary" class="site-main pestro-blog pestro-blog--<?php echo esc_attr($layout); ?> blog-sidebar-<?php echo esc_attr($sidebar); ?>">
+<main id="primary" class="site-main carvia-blog carvia-blog--<?php echo esc_attr($layout); ?> blog-sidebar-<?php echo esc_attr($sidebar); ?>">
 	<div class="container">
 		<div class="row">
 
 			<?php if ('left' === $sidebar && $has_sidebar) : ?>
 				<aside class="<?php echo esc_attr($sidebar_class); ?>">
-					<div class="pestro-blog__sidebar">
+					<div class="carvia-blog__sidebar">
 						<?php dynamic_sidebar('blog-sidebar'); ?>
 					</div>
 				</aside>
@@ -33,8 +33,8 @@ $sidebar_class = 'col-lg-4 col-md-5';
 
 			<div class="<?php echo esc_attr($content_class); ?>">
 				<?php if (have_posts()) : ?>
-					<div class="pestro-blog-wrap sidebar-<?php echo esc_attr($sidebar) ?>">
-						<div class="pestro-blog-<?php echo esc_attr($layout); ?>">
+					<div class="carvia-blog-wrap sidebar-<?php echo esc_attr($sidebar) ?>">
+						<div class="carvia-blog-<?php echo esc_attr($layout); ?>">
 							<?php
 							while (have_posts()) :
 								the_post();
@@ -43,11 +43,11 @@ $sidebar_class = 'col-lg-4 col-md-5';
 							?>
 						</div>
 
-						<nav class="pestro-pagination" aria-label="<?php esc_attr_e('Posts Pagination', 'pestro'); ?>">
+						<nav class="carvia-pagination" aria-label="<?php esc_attr_e('Posts Pagination', 'carvia'); ?>">
 							<?php
 							echo wp_kses_post(paginate_links([
-								'prev_text' => esc_html__('&laquo;', 'pestro'),
-								'next_text' => esc_html__('&raquo;', 'pestro'),
+								'prev_text' => esc_html__('&laquo;', 'carvia'),
+								'next_text' => esc_html__('&raquo;', 'carvia'),
 							]));
 							?>
 						</nav>
@@ -56,8 +56,8 @@ $sidebar_class = 'col-lg-4 col-md-5';
 				<?php else : ?>
 
 					<div class="no-results">
-						<h2><?php esc_html_e('Nothing Found', 'pestro'); ?></h2>
-						<p><?php esc_html_e('It seems we can\'t find what you\'re looking for. Try a search?', 'pestro'); ?></p>
+						<h2><?php esc_html_e('Nothing Found', 'carvia'); ?></h2>
+						<p><?php esc_html_e('It seems we can\'t find what you\'re looking for. Try a search?', 'carvia'); ?></p>
 						<?php get_search_form(); ?>
 					</div>
 
@@ -66,7 +66,7 @@ $sidebar_class = 'col-lg-4 col-md-5';
 
 			<?php if ('right' === $sidebar && $has_sidebar) : ?>
 				<aside class="<?php echo esc_attr($sidebar_class); ?>">
-					<div class="pestro-blog__sidebar">
+					<div class="carvia-blog__sidebar">
 						<?php dynamic_sidebar('blog-sidebar'); ?>
 					</div>
 				</aside>

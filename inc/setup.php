@@ -3,15 +3,15 @@
 /**
  * Theme Setup
  *
- * @package Pestro
+ * @package Carvia
  */
 
 if (! defined('ABSPATH')) {
     exit;
 }
 
-if (! function_exists('pestro_setup')) :
-    function pestro_setup()
+if (! function_exists('carvia_setup')) :
+    function carvia_setup()
     {
 
         // Automatic Feed Links
@@ -22,10 +22,10 @@ if (! function_exists('pestro_setup')) :
 
         // Post Thumbnails
         add_theme_support('post-thumbnails');
-        add_image_size('pestro-blog-grid',   800, 530, true);
-        add_image_size('pestro-blog-list',   760, 460, true);
-        add_image_size('pestro-blog-single', 1200, 650, true);
-        add_image_size('pestro-thumb-small', 150, 150, true);
+        add_image_size('carvia-blog-grid',   800, 530, true);
+        add_image_size('carvia-blog-list',   760, 460, true);
+        add_image_size('carvia-blog-single', 1200, 650, true);
+        add_image_size('carvia-thumb-small', 150, 150, true);
 
         // Custom Logo
         add_theme_support('custom-logo', [
@@ -71,12 +71,12 @@ if (! function_exists('pestro_setup')) :
 
         // Block Editor Color Palette
         add_theme_support('editor-color-palette', [
-            ['name' => __('Primary',   'pestro'), 'slug' => 'primary',   'color' => '#D1FF6D'],
-            ['name' => __('Secondary', 'pestro'), 'slug' => 'secondary', 'color' => '#153F2A'],
-            ['name' => __('Heading',   'pestro'), 'slug' => 'heading',   'color' => '#0B311E'],
-            ['name' => __('Body',      'pestro'), 'slug' => 'body',      'color' => '#364745'],
-            ['name' => __('Orange',    'pestro'), 'slug' => 'orange',    'color' => '#FFBC64'],
-            ['name' => __('White',     'pestro'), 'slug' => 'white',     'color' => '#FFFFFF'],
+            ['name' => __('Primary',   'carvia'), 'slug' => 'primary',   'color' => '#D1FF6D'],
+            ['name' => __('Secondary', 'carvia'), 'slug' => 'secondary', 'color' => '#153F2A'],
+            ['name' => __('Heading',   'carvia'), 'slug' => 'heading',   'color' => '#0B311E'],
+            ['name' => __('Body',      'carvia'), 'slug' => 'body',      'color' => '#364745'],
+            ['name' => __('Orange',    'carvia'), 'slug' => 'orange',    'color' => '#FFBC64'],
+            ['name' => __('White',     'carvia'), 'slug' => 'white',     'color' => '#FFFFFF'],
         ]);
 
         // Content Width
@@ -84,10 +84,10 @@ if (! function_exists('pestro_setup')) :
     }
 endif;
 
-add_action('after_setup_theme', 'pestro_setup');
+add_action('after_setup_theme', 'carvia_setup');
 
 
-function pestro_woocommerce_support()
+function carvia_woocommerce_support()
 {
     add_theme_support('woocommerce', array(
 
@@ -102,7 +102,7 @@ function pestro_woocommerce_support()
     ));
 }
 
-add_action('after_setup_theme', 'pestro_woocommerce_support');
+add_action('after_setup_theme', 'carvia_woocommerce_support');
 
 // ─── Content Width ────────────────────────────────────────────
 if (! isset($content_width)) {
@@ -110,17 +110,17 @@ if (! isset($content_width)) {
 }
 
 // ─── Translations ────────────────────────────────────────────
-function pestro_load_textdomain()
+function carvia_load_textdomain()
 {
-    load_theme_textdomain('pestro', PESTRO_DIR . '/languages');
+    load_theme_textdomain('carvia', CARVIA_DIR . '/languages');
 }
-add_action('init', 'pestro_load_textdomain');
+add_action('init', 'carvia_load_textdomain');
 
 // ─── Redux Framework ──────────────────────────────────────────
 if (class_exists('Redux')) {
-    function pestro_load_redux_framework()
+    function carvia_load_redux_framework()
     {
-        require_once PESTRO_INC . 'redux/redux-config.php';
+        require_once CARVIA_INC . 'redux/redux-config.php';
     }
-    add_action('after_setup_theme', 'pestro_load_redux_framework');
+    add_action('after_setup_theme', 'carvia_load_redux_framework');
 }

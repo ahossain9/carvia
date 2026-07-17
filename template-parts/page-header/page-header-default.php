@@ -3,15 +3,15 @@
         <div class="container">
             <div class="title-content">
                 <?php
-                    if (is_search()) {
-                        echo '<h1>' . esc_html__('Search result for: “', 'pestro') . esc_html(get_search_query()) . '”' . '</h1>';
-                    } elseif (is_404()) {
-                        echo '<h1>' . esc_html__('Page Not Found', 'pestro') . '</h1>';
-                    } else {
-                        esc_html(the_title('<h1>', '</h1>'));
-                    }
+                if (is_search()) {
+                    echo '<h1>' . esc_html__('Search result for: “', 'carvia') . esc_html(get_search_query()) . '”' . '</h1>';
+                } elseif (is_404()) {
+                    echo '<h1>' . esc_html__('Page Not Found', 'carvia') . '</h1>';
+                } else {
+                    esc_html(the_title('<h1>', '</h1>'));
+                }
                 ?>
-                <?php pestro_breadcrumbs(); ?>
+                <?php carvia_breadcrumbs(); ?>
             </div>
         </div>
     </div>

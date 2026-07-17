@@ -4,13 +4,13 @@
 $footer_layout = 'default';
 $footer_class  = 'default';
 
-if (class_exists('Redux') && function_exists('pestro_option')) {
+if (class_exists('Redux') && function_exists('carvia_option')) {
 
-	$footer_layout = pestro_option('footer_layout', 'default');
+	$footer_layout = carvia_option('footer_layout', 'default');
 	$footer_class  = is_numeric($footer_layout) ? 'elementor' : sanitize_title($footer_layout);
 
 	if (is_singular()) {
-		$page_footer = get_post_meta(get_the_ID(), '_pestro_footer_type', true);
+		$page_footer = get_post_meta(get_the_ID(), '_carvia_footer_type', true);
 
 		if (!empty($page_footer) && is_numeric($page_footer)) {
 			$footer_layout = $page_footer;
@@ -24,7 +24,7 @@ if (class_exists('Redux') && function_exists('pestro_option')) {
 }
 ?>
 
-<footer id="colophon" class="pestro-footer pestro-footer--<?php echo esc_attr($footer_class); ?>" role="contentinfo">
+<footer id="colophon" class="carvia-footer carvia-footer--<?php echo esc_attr($footer_class); ?>" role="contentinfo">
 	<?php
 	if (is_numeric($footer_layout) && class_exists('\Elementor\Plugin')) {
 		echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display((int) $footer_layout);
