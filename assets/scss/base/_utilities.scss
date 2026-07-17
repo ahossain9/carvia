@@ -1,0 +1,158 @@
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ─── Text Alignment ───────────────────────────────────────────
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+// ─── Display ──────────────────────────────────────────────────
+.d-none {
+    display: none !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+// ─── Spacing ──────────────────────────────────────────────────
+@for $i from 0 through 5 {
+    .mt-#{$i} {
+        margin-top: $spacer * $i !important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $spacer * $i !important;
+    }
+
+    .ms-#{$i} {
+        margin-left: $spacer * $i !important;
+    }
+
+    .me-#{$i} {
+        margin-right: $spacer * $i !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: $spacer * $i !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: $spacer * $i !important;
+    }
+
+    .ps-#{$i} {
+        padding-left: $spacer * $i !important;
+    }
+
+    .pe-#{$i} {
+        padding-right: $spacer * $i !important;
+    }
+}
+
+// ─── Section Padding ──────────────────────────────────────────
+.section-padding {
+    padding: 100px 0;
+
+    @include respond-below(lg) {
+        padding: 70px 0;
+    }
+
+    @include respond-below(md) {
+        padding: 50px 0;
+    }
+}
+
+// ─── Colors ───────────────────────────────────────────────────
+.text-primary {
+    color: $color-primary !important;
+}
+
+.text-secondary {
+    color: $color-secondary !important;
+}
+
+.text-heading {
+    color: $color-heading !important;
+}
+
+.text-white {
+    color: $color-white !important;
+}
+
+.text-orange {
+    color: $color-orange !important;
+}
+
+.bg-primary {
+    background-color: $color-primary !important;
+}
+
+.bg-secondary {
+    background-color: $color-secondary !important;
+}
+
+.bg-white {
+    background-color: $color-white !important;
+}
+
+.bg-light {
+    background-color: $color-bg !important;
+}
+
+.bg-dark {
+    background-color: $color-heading !important;
+}
+
+// ─── Overflow ─────────────────────────────────────────────────
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
+// ─── Position ─────────────────────────────────────────────────
+.position-relative {
+    position: relative !important;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+// ─── Width / Height ───────────────────────────────────────────
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+// ─── Visually Hidden (Accessibility) ──────────────────────────
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}

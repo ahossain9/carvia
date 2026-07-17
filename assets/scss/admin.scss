@@ -1,0 +1,319 @@
+/*---------------------------------------------------------------------
+    Variables
+-----------------------------------------------------------------------*/
+$primary: #19beec;
+$dark: #2b2b2b;
+$text: #a9abae;
+$white: #ffffff;
+
+/*---------------------------------------------------------------------
+    General
+-----------------------------------------------------------------------*/
+.admin-color-fresh,
+.wp-customizer {
+    #redux-header {
+        background: $dark;
+        border-color: $primary;
+    }
+}
+
+.redux-container {
+    #redux-header {
+        .display_header {
+            padding: 20px;
+        }
+    }
+
+    #info_bar {
+        padding: 15px;
+    }
+
+    .redux-main {
+        #redux-sticky {
+            #info_bar {
+                height: 45px;
+
+                .expand_options {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------
+    Sidebar
+-----------------------------------------------------------------------*/
+.redux-sidebar {
+    .redux-group-menu {
+        li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            a {
+                background: $dark;
+                opacity: 1;
+                color: $text;
+                border-bottom-color: rgba(255, 255, 255, .08);
+                padding: 15px;
+                i {
+                    font-size: 15px;
+                }
+                &:hover {
+                    color: $primary;
+                    background: $dark;
+                }
+            }
+
+            &.active {
+                a {
+                    background: $primary;
+                }
+            }
+
+            &.activeChild.hasSubSections,
+            &.active.hasSubSections {
+                a {
+                    background: $dark;
+                    color: $primary;
+                    text-shadow: none;
+                }
+
+                ul.subsection {
+                    border: 1px solid $primary;
+
+                    li {
+                        a {
+                            padding: 10px;
+                            background: $dark;
+
+                            &:hover {
+                                color: $primary;
+                                background: $dark;
+                            }
+                        }
+
+                        &.active a {
+                            background: $primary;
+                            color: $white;
+                            text-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul .subsection {
+        border: 1px solid $primary;
+    }
+}
+
+/*---------------------------------------------------------------------
+    Inputs
+-----------------------------------------------------------------------*/
+.redux-container-text input,
+.redux-main input.large-text {
+    height: 45px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    box-shadow: none;
+}
+
+.form-table {
+    .redux-container-text input {
+        margin-bottom: 0;
+    }
+}
+
+/*---------------------------------------------------------------------
+    Buttons
+-----------------------------------------------------------------------*/
+.redux-main {
+    .button {
+        font-size: 14px;
+        height: 45px;
+        line-height: 45px;
+        padding: 0 35px;
+        box-shadow: none;
+        color: $white;
+        text-shadow: none;
+        border-radius: 0;
+        margin: 0 5px;
+        background: $dark;
+        &.remove-image {
+            background: $primary;
+            color: $white;
+            border-color: $primary;
+
+            &:hover {
+                background: $dark;
+                border-color: $dark;
+                color: $white;
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------
+    Switch
+-----------------------------------------------------------------------*/
+.redux-container-switch {
+    .switch-options {
+        label {
+                line-height: 45px;
+                cursor: pointer;
+                border-radius: 0;
+                height: 45px;
+                padding: 0 25px;
+            }
+    }
+    .cb-disable span,
+    .cb-enable span {
+        line-height: 43px;
+    }
+    .cb-enable.selected{
+            background: $primary !important;
+            border-color: $primary !important;
+
+    }
+}
+
+/*---------------------------------------------------------------------
+    Inputs & Groups
+-----------------------------------------------------------------------*/
+.redux-main {
+    textarea {
+        padding: 15px;
+    }
+
+    .input-prepend,
+    .input-prepend input {
+        box-shadow: none;
+        height: 50px;
+    }
+
+    .input-prepend .add-on,
+    .input-append .add-on {
+        height: 35px;
+        line-height: 35px!important;
+        padding: 0 5px;
+        text-shadow: none;
+        background: $dark;
+        border-radius: 0;
+    }
+
+    .select2-container {
+        .select2-choice {
+            height: 43px;
+            line-height: 43px;
+            border-radius: 0;
+            background-image: none;
+        }
+    }
+    .select2-selection {
+        height: 50px !important;
+        padding-left: 10px;
+    }
+        .select2-container--default {
+            .select2-selection--single {
+                .select2-selection__clear {
+                        height: 50px;
+                    }
+                .select2-selection__rendered {
+                    line-height: 50px;
+                }
+                .select2-selection__arrow b{
+                    top: 25px;
+                }
+            }
+        }
+}
+
+/*---------------------------------------------------------------------
+    Typography
+-----------------------------------------------------------------------*/
+.redux-main {
+    .redux-typography-container {
+        .select_wrapper {
+            margin: 0 10px 30px 0;
+        }
+
+        .input_wrapper {
+            input.mini {
+                height: 50px;
+            }
+
+            &.font-size {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    .description {
+        margin-top: 20px;
+    }
+}
+
+/*---------------------------------------------------------------------
+    Select2
+-----------------------------------------------------------------------*/
+.select2-drop.select2-drop-above {
+    .select2-search {
+        input {
+            box-shadow: none;
+
+            &:focus {
+                box-shadow: none;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+.select2-container {
+    .select2-choice {
+        .select2-arrow b {
+            background-color: $dark;
+            background-position: 0 10px;
+        }
+    }
+}
+
+/*---------------------------------------------------------------------
+    Color Picker
+-----------------------------------------------------------------------*/
+.redux-container {
+    .redux-main {
+        .wp-picker-container {
+            .wp-color-result {
+                height: 40px !important;
+                .wp-color-result-text {
+                    background: $dark;
+                    border-radius: 0;
+                    border-left: 1px solid $dark;
+                    color: $white;
+                    line-height: 39px;
+                    padding: 0 15px;
+                }
+            }
+        }
+    }
+}
+
+/*---------------------------------------------------------------------
+    Misc
+-----------------------------------------------------------------------*/
+.redux-container-image_select ul.redux-image-select li {
+    padding: 5px 5px 15px 5px;
+}
+
+.redux-main .redux-option-image {
+    margin-bottom: 15px;
+}
+
+.redux-container .redux-main .form-table tr td {
+    padding-bottom: 25px;
+}
+
+#header-social-icons-list li strong {
+    text-transform: capitalize;
+}

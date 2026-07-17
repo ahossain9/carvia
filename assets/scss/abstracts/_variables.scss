@@ -1,0 +1,70 @@
+@use 'sass:map';
+@use 'sass:color';
+@use 'sass:math';
+
+// ─── Color Palette ────────────────────────────────────────────
+$color-primary: #D1FF6D;
+$color-secondary: #116630;
+$color-deep-green: #052B13;
+$color-orange: #FFBC64;
+$color-heading: #0B311E;
+$color-body: #364745;
+$color-bg: #FBFFF5;
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-border: #E2EDE6;
+$color-light-green: #F9FFEE;
+
+// ─── Typography ───────────────────────────────────────────────
+$font-heading: 'Plus Jakarta Sans', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+$font-size-base: 16px;
+$line-height-base: 1.75;
+
+$h1-size: 60px;
+$h2-size: 50px;
+$h3-size: 35px;
+$h4-size: 24px;
+$h5-size: 20px;
+$h6-size: 18px;
+$heading-line-height: 1.2;
+$heading-weight: 700;
+
+// ─── Spacing ──────────────────────────────────────────────────
+$spacer: 1rem;
+
+// ─── Grid ─────────────────────────────────────────────────────
+$grid-columns: 12;
+$grid-gutter: 1.5rem;
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+);
+
+// ─── Breakpoints ──────────────────────────────────────────────
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+// ─── Border Radius ────────────────────────────────────────────
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 16px;
+$radius-pill: 100px;
+
+// ─── Transitions ──────────────────────────────────────────────
+$transition-base: all 0.3s ease;
+
+// ─── Z-index ──────────────────────────────────────────────────
+$z-preloader: 9999;
+$z-header: 1000;
+$z-dropdown: 1010;

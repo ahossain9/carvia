@@ -1,0 +1,24 @@
+:root {
+    --e-global-color-primary: #D1FF6D;
+    --e-global-color-secondary: #116630;
+    --e-global-typography-primary-font-family: 'Plus Jakarta Sans',
+        sans-serif;
+    --e-global-typography-secondary-font-family: 'Inter',
+        sans-serif;;
+}
+
+.elementor-kit-1 {
+    --e-global-color-primary: #D1FF6D;
+    --e-global-color-secondary: #116630;
+}
+
+[class*="elementor-kit-"] {
+    --e-global-color-primary: #D1FF6D;
+    --e-global-color-secondary: #116630;
+}
+
+[class*="elementor-kit-"] {
+    --e-global-typography-primary-font-family: 'Plus Jakarta Sans', sans-serif;
+    --e-global-typography-secondary-font-family: 'Inter',
+        sans-serif;
+}

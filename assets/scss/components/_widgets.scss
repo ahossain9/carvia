@@ -1,0 +1,369 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ─── WordPress Widgets ────────────────────────────────────────
+#page {
+    .widget {
+        .widget-title,
+        .wp-block-heading {
+            font-size: 22px;
+            font-weight: 700;
+            color: $color-heading;
+            margin: 0 0 15px;
+            @include respond-below(md) {
+                font-size:18px
+            }
+        }
+    }
+}
+.widget {
+    margin-bottom: 30px;
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    label {
+        font-weight: 500;
+        @include respond-below(md) {
+            font-size: 15px;
+        }
+    }
+    table {
+        margin-bottom: 10px;
+    }
+    a {
+        &:hover {
+            color: $color-secondary!important;
+        }
+    }
+    img {
+        height: auto;
+    }
+    select {
+        width: 100%;
+        height: 50px;
+        border: 1px solid $color-border;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 0 20px;
+        font-size: 15px;
+        font-weight: 500;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23666' d='M5 7l5 6 5-6z'/%3E%3C/svg%3E") no-repeat right 12px center;
+        background-size: 14px;
+        margin-top: 10px;
+        @include respond-below(md) {
+            height: 40px;
+            font-size: 14px;
+        }
+        &:focus {
+            border-color: $color-secondary
+        }
+        &:focus-visible {
+            outline: none;
+            border: 1px solid $color-secondary;
+        }
+    }
+    .wp-block-calendar {
+        caption {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        td {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 15px;
+        }
+        th {
+            padding: 10px 0;
+            font-size: 15px;
+        }
+        .wp-calendar-nav {
+            font-weight: 500;
+            margin-top: 10px;
+        }
+    }
+    .wp-block-archives__label {
+        margin: 0 0 10px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid $color-border;
+            &:last-child {
+                border-bottom: none;
+            }
+            a {
+                color: $color-body;
+                @include transition(color);
+                @include respond-below(md) {
+                    font-size: 15px
+                }
+
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+    .tagcloud,
+    .wp-block-tag-cloud {
+        a {
+            font-size: 16px !important;
+            border: 1px solid $color-border;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 10px;
+            background-color: #fff;
+            margin: 5px 5px 5px 0;
+            @include respond-below(md) {
+                padding: 6px 15px;
+                font-size: 15px !important;
+            }
+            &:hover {
+                background-color: $color-deep-green;
+                color: $color-primary!important;
+            }
+        }
+    }
+    .textwidget {
+        strong {
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+    }
+    .textwidget strong {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .search-form,
+    .wp-block-search {
+        input[type=search] {
+            width: 100%;
+            height: 50px;
+            border: 1px solid $color-border;
+            background-color: #fff;
+            padding: 0 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+            @include respond-below(md) {
+                height: 40px;
+                font-size: 14px;
+            }
+            &:focus-visible {
+                outline: none;
+                border: 1px solid $color-secondary;
+            }
+        }
+    }
+    .wp-block-search__button-outside.wp-block-search,
+    .wp-block-search__inside-wrapper {
+        button {
+            border: 1px solid $color-border;
+            border-radius: 10px;
+            height: 50px;
+            margin-top: 10px;
+            background-color: $color-deep-green;
+            color: $color-primary;;
+            padding: 0 15px;
+            transition: $transition-base;
+            @include respond-below(md) {
+                height: 40px;
+                font-size: 15px;
+            }
+            &:hover {
+                background-color: $color-primary;
+                color: $color-heading;
+            }
+        }
+    }
+    .wp-block-search__inside-wrapper {
+        border: 0;
+        background-color: transparent;
+    }
+    .rsswidget {
+        font-weight: 700;
+    }
+    ul.children,
+    ul ul.sub-menu {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    .calendar_wrap {
+        .wp-calendar-table {
+            caption {
+                font-weight: 500;
+                margin-bottom: 15px;
+            }
+        }
+        .wp-calendar-nav {
+            font-weight: 600;
+            margin-top: 10px;
+        }
+    }
+    .wp-block-rss__item-title,
+    .wp-block-latest-posts__post-title,
+    .wp-block-latest-comments__comment {
+        a {
+            font-weight: 600;
+            color: $color-body;
+            @include respond-below(md) {
+                font-size: 15px
+            }
+        }
+    }
+    .wp-block-latest-comments__comment-excerpt {
+        p {
+            font-size: 16px;
+        }
+        .wp-block-latest-comments__comment-date {
+            font-size: 14px;
+        }
+    }
+    .wp-block-latest-posts {
+        .wp-block-latest-posts__post-title {
+            font-weight: 600;
+        }
+    }
+    .wp-block-latest-posts__post-author,
+    .wp-block-latest-posts__post-date,
+    .wp-block-latest-comments__comment-date {
+        font-size: 14px;
+    }
+    .wp-block-latest-posts__featured-image {
+        margin-bottom: 15px;
+        img {
+            border-radius: 10px;
+        }
+    }
+    .wp-block-rss__item-author,
+    .wp-block-rss__item-publish-date {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    #loginform {
+        label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="password"]{
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            @include respond-below(md) {
+                height: 40px;
+                font-size: 15px;
+            }
+        }
+        input[type="submit"] {
+            height: 50px;
+            border-radius: 10px;
+            border: 0;
+            padding: 0 30px;
+            cursor: pointer;
+            background-color: #052b13;
+            color: #d1ff6d;
+            @include respond-below(md) {
+                height: 40px;
+                font-size: 15px;
+            }
+            &:hover {
+                background-color: #d1ff6d;
+                transition: 0.3s;
+                color: #0b311e
+            }
+        }
+        p {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.widget_archive ul li,
+.widget_categories ul li,
+.wp-block-categories-list li {
+    text-align: right;
+    display: block;
+    overflow: hidden;
+    a {
+        float: left;
+    }
+}
+
+.widget_rss {
+    .widget-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+ul.wp-block-latest-posts__list.has-dates.has-author.wp-block-latest-posts li {
+    border: 0;
+}
+
+// ─── Recent Posts Widget ──────────────────────────────────────
+.pestro-recent-posts-widget {
+    .pestro-recent-post-item {
+        @include flex(flex-start, center);
+        gap: 14px;
+        padding: 12px 0;
+        border-bottom: 1px solid $color-border;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .pestro-rp-thumb {
+        flex-shrink: 0;
+        width: 90px;
+        height: 90px;
+        border-radius: $radius-md;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include transition(transform, 0.4s);
+        }
+
+        &:hover img {
+            transform: scale(1.06);
+        }
+    }
+
+    .pestro-rp-content {
+        flex: 1;
+    }
+
+    .pestro-rp-title {
+        a {
+            color: $color-heading;
+            font-size: 16px;
+            display: inline-block;
+            margin: 0 0 5px;
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    .pestro-rp-date {
+        font-size: 14px;
+        color: rgba($color-body, 0.65);
+    }
+}

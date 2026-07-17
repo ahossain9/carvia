@@ -1,0 +1,18 @@
+@use 'sass:color';
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ─── Site Footer ──────────────────────────────────────────────
+.pestro-footer-copyright {
+    background-color: $color-deep-green;
+    text-align: center;
+    padding: 20px 0;
+    color: #F4F9E0;
+    @include respond-below(sm) {
+        padding: 20px 0;
+        font-size: 15px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+}

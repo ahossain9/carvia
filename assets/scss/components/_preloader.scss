@@ -1,0 +1,74 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// ─── Preloader ────────────────────────────────────────────────
+#pestro-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-deep-green;
+    z-index: $z-preloader;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include transition(opacity, 0.5s);
+
+    // &.pestro-preloader--hidden {
+    //     opacity: 0;
+    //     pointer-events: none;
+    // }
+}
+
+.pestro-preloader__spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid $color-border;
+    border-top-color: $color-primary;
+    border-radius: 50%;
+    animation: preloader-spin 0.8s linear infinite;
+}
+
+@keyframes preloader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.preloader {
+    background-color: red;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999
+}
+
+.preloader .spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100%;
+    animation: 1s ease-in-out infinite sk-scaleout
+}
+
+.preloader .d-table-cell {
+    display: table-cell;
+    vertical-align: middle
+}
+
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0)
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0
+    }
+}
+
