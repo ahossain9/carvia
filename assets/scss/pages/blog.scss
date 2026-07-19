@@ -51,7 +51,6 @@
     margin: 0 0 10px;
     font-weight: 500;
     display: inline-block;
-    time,
     .post-author {
       margin-right: 10px;
       color: $color-body;
@@ -356,7 +355,7 @@ nav.navigation.post-navigation {
           height: 50px;
           margin-top: 10px;
           background-color: #052b13;
-          color: #d1ff6d;
+          color: #FF4400;
           padding: 0 15px;
           transition: 0.3s;
           &:hover {
@@ -375,7 +374,7 @@ nav.navigation.post-navigation {
           background-color: #fff;
           margin: 5px 5px 5px 0;
           &:hover {
-            background-color: $color-deep-green;
+            background-color: $color-deep-black;
             color: $color-primary;
           }
         }

@@ -15,15 +15,11 @@ $logo_url    = ! empty($logo_data['url']) ? $logo_data['url'] : '';
 ?>
 
 <div class="container">
-    <div class="header-inner">
+    <div class="header-inner default">
         <!-- Logo -->
         <div class="header-logo">
             <?php if (has_custom_logo()) : ?>
                 <?php the_custom_logo(); ?>
-            <?php elseif ($logo_url) : ?>
-                <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php bloginfo('name'); ?>">
-                </a>
             <?php else : ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>"
                     class="site-title">

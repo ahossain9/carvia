@@ -129,7 +129,7 @@
         font-size: 15px !important;
       }
       &:hover {
-        background-color: $color-deep-green;
+        background-color: $color-deep-black;
         color: $color-primary !important;
       }
     }
@@ -171,7 +171,7 @@
       border-radius: 10px;
       height: 50px;
       margin-top: 10px;
-      background-color: $color-deep-green;
+      background-color: $color-deep-black;
       color: $color-primary;
       padding: 0 15px;
       transition: $transition-base;
@@ -273,13 +273,13 @@
       padding: 0 30px;
       cursor: pointer;
       background-color: #052b13;
-      color: #d1ff6d;
+      color: #FF4400;
       @include respond-below(md) {
         height: 40px;
         font-size: 15px;
       }
       &:hover {
-        background-color: #d1ff6d;
+        background-color: #FF4400;
         transition: 0.3s;
         color: #0b311e;
       }

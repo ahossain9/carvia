@@ -24,7 +24,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: $color-deep-green;
+            background: $color-deep-black;
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
@@ -40,7 +40,7 @@
 
             .btn-fill__icon {
                 background: $color-primary;
-                color: $color-deep-green;
+                color: $color-deep-black;
 
                 i.arrow-out {
                     transform: translate(130%, -130%);
@@ -68,7 +68,7 @@
             width: 35px;
             height: 35px;
             border-radius: 5px;
-            background: $color-deep-green;
+            background: $color-deep-black;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -101,7 +101,7 @@
                 &.arrow-in {
                     transform: translate(-130%, 130%);
                     opacity: 0;
-                    color: $color-deep-green;
+                    color: $color-deep-black;
                 }
             }
         }

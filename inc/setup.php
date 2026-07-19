@@ -71,7 +71,7 @@ if (! function_exists('carvia_setup')) :
 
         // Block Editor Color Palette
         add_theme_support('editor-color-palette', [
-            ['name' => __('Primary',   'carvia'), 'slug' => 'primary',   'color' => '#D1FF6D'],
+            ['name' => __('Primary',   'carvia'), 'slug' => 'primary',   'color' => '#FF4400'],
             ['name' => __('Secondary', 'carvia'), 'slug' => 'secondary', 'color' => '#153F2A'],
             ['name' => __('Heading',   'carvia'), 'slug' => 'heading',   'color' => '#0B311E'],
             ['name' => __('Body',      'carvia'), 'slug' => 'body',      'color' => '#364745'],

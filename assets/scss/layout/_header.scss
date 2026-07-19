@@ -88,7 +88,7 @@
             }
             &:hover {
                 .btn-fill__icon {
-                    background: $color-deep-green;
+                    background: $color-deep-black;
                 }
             }
         }
@@ -102,7 +102,7 @@
         .header-menu-bar {
             background-color: #fff;
             i {
-                color: $color-deep-green;
+                color: $color-deep-black;
             }
         }
     }
@@ -295,6 +295,9 @@
             display: none;
         }
     }
+    .default{
+        
+    }
 }
 
 /* Right aligned menu fix */
@@ -484,7 +487,7 @@
     .header-menu-bar {
         background-color: transparent;
         border-radius: 6px;
-        background-color: $color-deep-green;
+        background-color: $color-deep-black;
         font-size: 20px;
         padding: 4px 14px 0px;
         display: inline-block;

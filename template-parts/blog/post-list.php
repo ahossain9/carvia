@@ -35,14 +35,14 @@ $excerpt_length  = (int) carvia_option('excerpt_length', 25);
         <div class="carvia-post-card__body">
             <div class="carvia-post-card__meta">
                 <?php if (! empty($meta_opts['author'])) : ?>
-                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" class="post-author">
+                    <span class="post-author">
                         <i class="hgi hgi-stroke hgi-rounded hgi-user-circle"></i> <?php echo esc_html(get_the_author()); ?>
-                    </a>
+                    </span>
                 <?php endif; ?>
                 <?php if (! empty($meta_opts['date'])) : ?>
-                    <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+                    <span class="post-time">
                         <i class="hgi hgi-stroke hgi-rounded hgi-calendar-02"></i> <?php echo esc_html(get_the_date()); ?>
-                    </time>
+                    </span>
                 <?php endif; ?>
                 <?php if (! empty($meta_opts['category'])) :
                     $cats = get_the_category();

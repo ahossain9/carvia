@@ -33,7 +33,7 @@ Redux::set_section('carvia_options', [
             'title'    => esc_html__('Primary Color', 'carvia'),
             'subtitle' => esc_html__('Main accent color used throughout the theme.', 'carvia'),
             'default'  => [
-                'color' => '#D1FF6D',
+                'color' => '#FF4400',
                 'alpha' => '1',
                 'rgba'  => 'rgba(209,255,109,1)',
             ],

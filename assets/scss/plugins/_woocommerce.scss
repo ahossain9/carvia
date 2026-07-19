@@ -51,7 +51,7 @@
                     color: #116630;
                 }
                 .button {
-                    background-color: #d1ff6d;
+                    background-color: #FF4400;
                     border-radius: 7px;
                     padding: 12px 20px;
                     color: $color-heading;
@@ -61,7 +61,7 @@
                         font-size: 14px;
                     }
                     &:hover{
-                        background-color: $color-deep-green;
+                        background-color: $color-deep-black;
                         color: $color-white
                     }
                 }
@@ -95,8 +95,8 @@
                 }
                 a:hover,
                 span.current {
-                    background-color: #d1ff6d;
-                    border-color: #d1ff6d;
+                    background-color: #FF4400;
+                    border-color: #FF4400;
                 }
             }
         }
@@ -201,7 +201,7 @@
                     font-size: 15px;
                 }
                 &:hover{
-                    background-color: $color-deep-green;
+                    background-color: $color-deep-black;
                     color: $color-white;
                 }
             }
@@ -233,7 +233,7 @@
                     font-size: 15px;
                 }
                 &:hover {
-                    background-color: $color-deep-green;
+                    background-color: $color-deep-black;
                     color: $color-white;
                 }
                 
@@ -324,7 +324,7 @@
         border-radius: 10px;
         height: 50px;
         background-color: #052b13;
-        color: #d1ff6d;
+        color: #FF4400;
         padding: 0 15px;
         transition: .3s;
         @include respond-below(md) {
@@ -332,7 +332,7 @@
             font-size: 15px;
         }
         &:hover{
-            background-color: #d1ff6d;
+            background-color: #FF4400;
             color: #0b311e;
         }
     }
