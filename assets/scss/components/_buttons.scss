@@ -8,7 +8,7 @@
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        padding: 8px 8px 8px 20px;
+        padding: 6px 6px 6px 20px;
         font-weight: 500;
         background: $color-primary;
         border-radius: 8px;
@@ -16,6 +16,7 @@
         z-index: 0;
         transition: color 0.5s cubic-bezier(0.76, 0, 0.24, 1);
         line-height: 1;
+        color: $color-white;
         @include respond-below(lg) {
             font-size: 15px;
             padding: 6px 6px 4px 18px;
@@ -52,6 +53,7 @@
                     transform: translate(0, 0);
                     opacity: 1;
                     transform: rotate(-40deg);
+                    color: $color-white;
                 }
             }
         }
@@ -65,10 +67,10 @@
         &__icon {
             position: relative;
             z-index: 1;
-            width: 35px;
-            height: 35px;
+            width: 32px;
+            height: 32px;
             border-radius: 5px;
-            background: $color-deep-black;
+            background: $color-white;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -91,7 +93,7 @@
                 &.arrow-out {
                     transform: translate(0, 0);
                     opacity: 1;
-                    color: $color-white;
+                    color: $color-heading;
                     transition:
                         transform 0.5s cubic-bezier(0.76, 0, 0.24, 1),
                         opacity 0.4s cubic-bezier(0.76, 0, 0.24, 1),

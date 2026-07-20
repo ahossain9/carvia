@@ -82,11 +82,12 @@
     }
     .button-wrapper {
         .btn-fill {     
-            color: $color-heading;
+            color: $color-white;
             &:before{
                 background-color: $color-white;
             }
             &:hover {
+                color: $color-heading;
                 .btn-fill__icon {
                     background: $color-deep-black;
                 }
@@ -158,8 +159,8 @@
                     margin-right: 0;
                 }
                 &.current_page_item {
-                    a {
-                        color: #6e9d09
+                   > a {
+                        color: #FF4400
                     }
                 }
                 a {
@@ -168,7 +169,7 @@
                     position: relative;
                     font-weight: 500;
                     &:hover {
-                        color: #6e9d09;
+                        color: #FF4400;
                     }
                 }
 
@@ -438,7 +439,7 @@
         position: relative;
         &.current_page_item {
             a {
-                color: #6e9d09
+                color: #FF4400
             }
         }
         a {

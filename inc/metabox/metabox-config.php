@@ -91,11 +91,11 @@ if (! function_exists('carvia_register_meta_boxes')) :
             ],
         ];
 
-        // ── Service Feature List Repeater ──────────────────────────────
+        // ── Service ──────────────────────────────
         $meta_boxes[] = [
             'id'         => 'carvia_service_features',
             'title'      => esc_html__('Service Features', 'carvia'),
-            'post_types' => ['carvia-service'],
+            'post_types' => ['services'],
             'context'    => 'normal',
             'priority'   => 'high',
             'fields'     => [

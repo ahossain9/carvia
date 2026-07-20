@@ -23,9 +23,9 @@ $font-size-base: 16px;
 $line-height-base: 1.75;
 
 $h1-size: 60px;
-$h2-size: 50px;
-$h3-size: 35px;
-$h4-size: 24px;
+$h2-size: 40px;
+$h3-size: 24px;
+$h4-size: 22px;
 $h5-size: 20px;
 $h6-size: 18px;
 $heading-line-height: 1.2;
@@ -68,3 +68,14 @@ $transition-base: all 0.3s ease;
 $z-preloader: 9999;
 $z-header: 1000;
 $z-dropdown: 1010;
+
+:root,
+body[class*="elementor-kit-"],
+[data-elementor-type] {
+    --e-global-color-primary: #0A0A0A;
+    --e-global-color-text: #5A5A5A;
+    --e-global-typography-primary-font-family: 'Plus Jakarta Sans', sans-serif;
+    --e-global-typography-text-font-family: 'Inter', sans-serif;
+    --e-global-typography-primary-font-weight: 700;
+    --e-global-color-accent: #FF4400;
+}
