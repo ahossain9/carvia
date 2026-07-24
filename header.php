@@ -28,7 +28,7 @@ if (class_exists('Redux') && function_exists('carvia_option')) {
 		$header_class = $header_type;
 	} elseif (is_singular()) {
 
-		$page_header_layout = get_post_meta(get_the_ID(), '_carvia_header_layout', true);
+		$page_header_layout = get_post_meta(get_the_ID(), 'carvia_header_layout', true);
 
 		if (!empty($page_header_layout) && !is_numeric($page_header_layout)) {
 			$header_type  = $page_header_layout;

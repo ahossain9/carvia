@@ -10,7 +10,7 @@ if (class_exists('Redux') && function_exists('carvia_option')) {
 	$footer_class  = is_numeric($footer_layout) ? 'elementor' : sanitize_title($footer_layout);
 
 	if (is_singular()) {
-		$page_footer = get_post_meta(get_the_ID(), '_carvia_footer_type', true);
+		$page_footer = get_post_meta(get_the_ID(), 'carvia_footer_type', true);
 
 		if (!empty($page_footer) && is_numeric($page_footer)) {
 			$footer_layout = $page_footer;

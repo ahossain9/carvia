@@ -62,7 +62,7 @@ if (! function_exists('carvia_register_meta_boxes')) :
                 // ── Header Selection ──────────────────────────────────
                 [
                     'name'    => esc_html__('Page Header Layout', 'carvia'),
-                    'id'      => '_carvia_header_layout',
+                    'id'      => 'carvia_header_layout',
                     'type'    => 'select',
                     'options' => $header_choices,
                     'std'     => '',
@@ -72,7 +72,7 @@ if (! function_exists('carvia_register_meta_boxes')) :
                 // ── Page Header Background Image ──────────────────────
                 [
                     'name'             => esc_html__('Page Header Background Image', 'carvia'),
-                    'id'               => '_carvia_page_header_image',
+                    'id'               => 'carvia_page_header_image',
                     'type'             => 'image_advanced',
                     'max_file_uploads' => 1,
                     'return_value'     => 'url',
@@ -82,7 +82,7 @@ if (! function_exists('carvia_register_meta_boxes')) :
                 // ── Footer Selection ──────────────────────────────────
                 [
                     'name'    => esc_html__('Footer Layout', 'carvia'),
-                    'id'      => '_carvia_footer_type',
+                    'id'      => 'carvia_footer_type',
                     'type'    => 'select',
                     'options' => $footer_choices,
                     'std'     => '',
@@ -100,21 +100,23 @@ if (! function_exists('carvia_register_meta_boxes')) :
             'priority'   => 'high',
             'fields'     => [
                 [
-                    'id'         => '_carvia_feature_list',
-                    'type'       => 'group',
-                    'name'       => esc_html__('Feature List', 'carvia'),
-                    'desc'       => esc_html__('Add features/benefits included in this service. Drag to reorder.', 'carvia'),
-                    'clone'      => true,
-                    'sort_clone' => true,
-                    'add_button' => esc_html__('+ Add Feature', 'carvia'),
-                    'fields'     => [
-                        [
-                            'id'          => 'title',
-                            'name'        => esc_html__('Feature Title', 'carvia'),
-                            'type'        => 'text',
-                            'placeholder' => esc_html__('e.g. Eco-Friendly Products', 'carvia'),
-                        ],
-                    ],
+                    'id'         => 'carvia_service_icon',
+                    'type'       => 'single_image',
+                    'name'       => esc_html__('Icon', 'carvia'),
+                    'desc'       => esc_html__('Add an icon for service.', 'carvia'),
+                ],
+                [
+                    'id'         => 'carvia_service_image',
+                    'type'       => 'single_image',
+                    'name'       => esc_html__('Image', 'carvia'),
+                    'desc'       => esc_html__('Add an image for service.', 'carvia'),
+                ],
+                [
+                    'id'         => 'carvia_service_short_description',
+                    'type'       => 'textarea',
+                    'name'       => esc_html__('Short Description', 'carvia'),
+                    'desc'       => esc_html__('Service short description', 'carvia'),
+                    'placeholder'=> esc_html__('Add short description here', 'carvia'),
                 ],
             ],
         ];
