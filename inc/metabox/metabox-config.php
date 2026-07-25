@@ -91,10 +91,55 @@ if (! function_exists('carvia_register_meta_boxes')) :
             ],
         ];
 
+        // ── Cars ──────────────────────────────
+        $meta_boxes[] = [
+            'id'         => 'carvia_car_details',
+            'title'      => __('Car Details', 'carvia-core'),
+            'post_types' => ['cars'],
+            'fields'     => [
+                [
+                    'id'         => 'carvia_car_image',
+                    'type'       => 'single_image',
+                    'name'       => esc_html__('Image', 'carvia'),
+                    'desc'       => esc_html__('Add an image for car.', 'carvia'),
+                ],
+                [
+                    'id'          => 'carvia_car_rental_price',
+                    'type'        => 'text',
+                    'name'        => esc_html__('Rental Price', 'carvia'),
+                    'desc'        => esc_html__('Enter rental price with currency', 'carvia'),
+                    'placeholder' => esc_html__('Enter Rental Price', 'carvia'),
+                ],
+                [
+                    'id'          => 'carvia_car_rental_duration',
+                    'type'        => 'text',
+                    'name'        => esc_html__('Rental Duration', 'carvia'),
+                    'desc'        => esc_html__('Enter the car rental duration', 'carvia'),
+                    'placeholder' => esc_html__('Enter the rental duration', 'carvia'),
+                ],
+                [
+                    'id'          => 'carvia_car_model_name',
+                    'type'        => 'text',
+                    'name'        => esc_html__('Model Name', 'carvia'),
+                    'desc'        => esc_html__('Enter the car model name', 'carvia'),
+                    'placeholder' => esc_html__('Add model name here', 'carvia'),
+                ],
+                [
+                    'id'          => 'carvia_car_specs',
+                    'name'        => __('Specifications', 'carvia-core'),
+                    'type'        => 'key_value',
+                    'desc'        => __('Add Label and Value pairs', 'carvia-core'),
+                    'placeholder' => [
+                        'key'   => __('Label', 'carvia-core'),
+                        'value' => __('Value', 'carvia-core'),
+                    ],
+                ],
+            ],
+        ];
         // ── Service ──────────────────────────────
         $meta_boxes[] = [
-            'id'         => 'carvia_service_features',
-            'title'      => esc_html__('Service Features', 'carvia'),
+            'id'         => 'carvia_service_details',
+            'title'      => esc_html__('Service Details', 'carvia'),
             'post_types' => ['services'],
             'context'    => 'normal',
             'priority'   => 'high',

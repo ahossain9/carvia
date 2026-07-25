@@ -1,20 +1,20 @@
 <?php
 
 /**
- * Template for Full Width Custom Post Types
+ * Template for Services Custom Post Type
  */
 get_header(); ?>
 
-<main id="primary" class="site-main full-width-content">
-    <h1>Amir</h1>
-    <?php
-    while (have_posts()) :
-        the_post();
-        the_content();
-    endwhile;
-    ?>
+<main id="primary" class="site-main carvia-service-single">
+    <div class="container">
+        <?php
+        while (have_posts()) :
+            the_post();
+            the_content();
+        endwhile;
+        ?>
+    </div>
 </main>
 
 <?php
-// Do NOT include get_sidebar() here
 get_footer();
