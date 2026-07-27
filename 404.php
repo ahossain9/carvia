@@ -20,8 +20,8 @@ get_header();
 					<span class="btn-fill__text"><?php esc_html_e('Back to Home', 'carvia'); ?></span>
 					<span class="rpl-btn__label">
 						<span class="btn-fill__icon">
-							<i class="icon icon-arrow-right-02"></i>
-							<i class="icon icon-arrow-right-02"></i>
+							<i class="arrow-out icon-arrow-right-02"></i>
+							<i class="arrow-in icon-arrow-right-02"></i>
 						</span>
 					</span>
 				</a>
