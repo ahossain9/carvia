@@ -36,12 +36,12 @@ $excerpt_length  = (int) carvia_option('excerpt_length', 25);
             <div class="carvia-post-card__meta">
                 <?php if (! empty($meta_opts['author'])) : ?>
                     <span class="post-author">
-                        <i class="hgi hgi-stroke hgi-rounded hgi-user-circle"></i> <?php echo esc_html(get_the_author()); ?>
+                        <i class="icon icon-user-circle"></i> <?php echo esc_html(get_the_author()); ?>
                     </span>
                 <?php endif; ?>
                 <?php if (! empty($meta_opts['date'])) : ?>
                     <span class="post-time">
-                        <i class="hgi hgi-stroke hgi-rounded hgi-calendar-02"></i> <?php echo esc_html(get_the_date()); ?>
+                        <i class="icon icon-calculator-01"></i> <?php echo esc_html(get_the_date()); ?>
                     </span>
                 <?php endif; ?>
                 <?php if (! empty($meta_opts['category'])) :
@@ -49,7 +49,7 @@ $excerpt_length  = (int) carvia_option('excerpt_length', 25);
                     if (! empty($cats)) : ?>
                         <a href="<?php echo esc_url(get_category_link($cats[0]->term_id)); ?>"
                             class="post-category">
-                            <i class="hgi hgi-stroke hgi-rounded hgi-tag-01"></i> <?php echo esc_html($cats[0]->name); ?>
+                            <i class="icon icon-bookmark-01"></i> <?php echo esc_html($cats[0]->name); ?>
                         </a>
                 <?php endif;
                 endif; ?>
@@ -69,7 +69,8 @@ $excerpt_length  = (int) carvia_option('excerpt_length', 25);
 
             <div class="carvia-post-card__footer">
                 <a href="<?php the_permalink(); ?>" class="carvia-post-card__read-more">
-                    <span class="read-more-text"><?php esc_html_e('Read More', 'carvia'); ?></span> <span class="read-more-icon"><i class="arrow-out hgi-stroke hgi-arrow-right-02"></i></span>
+                    <span class="read-more-text"><?php esc_html_e('Read More', 'carvia'); ?></span> <span class="read-more-icon"><i class="icon icon-arrow-right-02"></i>
+                    </span>
                 </a>
             </div>
         </div>

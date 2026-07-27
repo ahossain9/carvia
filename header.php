@@ -83,7 +83,7 @@ if (class_exists('Redux') && function_exists('carvia_option')) {
 		<div class="offcanvas-menu">
 			<div class="offcanvas-inner-wrap">
 				<div class="offcanvas-close-btn">
-					<a class="close-btn"><i class="hgi hgi-stroke hgi-cancel-01"></i></a>
+					<a class="close-btn"><i class="icon icon-cancel-circle"></i></a>
 				</div>
 				<div class="offcanvas-logo">
 					<div class="header-logo">

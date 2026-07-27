@@ -20,7 +20,7 @@
         /* ── Mobile Navigation ──────────────────────────── */
         mobileNav: function () {
             $('.main-navigation-mobile .menu-item-has-children > a').each(function() {
-                $(this).prepend('<span><i class="hgi hgi-stroke hgi-rounded hgi-arrow-right-01"></i></span>');
+                $(this).prepend('<span><i class="icon icon-arrow-left-01"></i></span>');
             });
             $('.main-navigation-mobile .menu-item-has-children a > span').on('click', function(e) {
                 e.preventDefault();

@@ -67,8 +67,8 @@ $header_button_url  = carvia_option('header_button_url', '#');
                     <span class="btn-fill__text"><?php echo esc_html($header_button_text);  ?></span>
                     <span class="rpl-btn__label">
                         <span class="btn-fill__icon">
-                            <i class="arrow-out hgi-stroke hgi-arrow-right-02"></i>
-                            <i class="arrow-in hgi-stroke hgi-arrow-right-02"></i>
+                            <i class="icon icon-arrow-right-02"></i>
+                            <i class="icon icon-arrow-right-02"></i>
                         </span>
                     </span>
                 </a>
@@ -76,7 +76,7 @@ $header_button_url  = carvia_option('header_button_url', '#');
         <?php endif; ?>
         <!-- start mobile menu wrap -->
         <div class="mobile-menu-wrap">
-            <a class="header-menu-bar"><i class="hgi hgi-stroke hgi-menu-01"></i></a>
+            <a class="header-menu-bar"><i class="icon icon-dashboard-circle1"></i></a>
         </div>
         <!-- end mobile menu wrap -->
     </div><!-- header inner -->

@@ -24,7 +24,7 @@ if (! function_exists('carvia_scripts')) :
 
         // ─── Main Compiled CSS ────────────────────────────────
         wp_enqueue_style('carvia-style', CARVIA_ASSETS . 'css/style.min.css', ['carvia-google-fonts'], CARVIA_VERSION);
-        wp_enqueue_style('hugeicon-style', CARVIA_ASSETS . 'css/hugeicon.min.css', ['carvia-google-fonts'], CARVIA_VERSION);
+        wp_enqueue_style('carvia-icons-style', CARVIA_ASSETS . 'css/carvia-icons.min.css', ['carvia-google-fonts'], CARVIA_VERSION);
 
         // ─── WordPress Block Library ──────────────────────────
         wp_enqueue_style('wp-block-library');
