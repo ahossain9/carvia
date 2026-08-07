@@ -21,7 +21,7 @@ function carvia_get_header_type_choices()
 
     // 2. Query the 'carvia_header' custom post type
     $custom_headers = get_posts([
-        'post_type'      => 'carvia-header',
+        'post_type'      => 'header',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
     ]);

@@ -20,7 +20,7 @@ function carvia_get_footer_type_choices()
 
     // 2. Query the 'carvia_footer' custom post type
     $custom_footers = get_posts([
-        'post_type'      => 'carvia-footer',
+        'post_type'      => 'footer',
         'post_status'    => 'publish',
         'posts_per_page' => -1,
     ]);
