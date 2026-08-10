@@ -80,7 +80,7 @@
                     align-items: center;
                     text-align: center;
                     justify-content: center;
-                    border: 1px solid #e2ede6;
+                    border: 1px solid #ebebeb;
                     width: 50px;
                     height: 50px;
                     padding: 0;
@@ -135,7 +135,7 @@
                 margin-bottom: 0;
             }
             .wc-block-cart-items{
-                border: 1px solid #e2ede6;
+                border: 1px solid #ebebeb;
                 .wc-block-cart-items__header-image,
                 .wc-block-cart-items__header-total{
                     width: 120px;
@@ -242,11 +242,11 @@
         .wc-block-components-form {
             .wc-block-components-text-input{
                 input {
-                    border: 1px solid #e2ede6 !important;
+                    border: 1px solid #ebebeb !important;
                 }
             }
             .wc-blocks-components-select__select{
-                border: 1px solid #e2ede6 !important;
+                border: 1px solid #ebebeb !important;
             }
         }
         .wc-block-components-checkout-return-to-cart-button {
@@ -284,7 +284,7 @@
 .wc-block-product-categories__button {
     padding: 0 10px;
     height: 50px;
-    border: 1px solid #e2ede6;
+    border: 1px solid #ebebeb;
     margin: 10px 0 0!important;
     svg {
         width: 15px;
@@ -312,7 +312,7 @@
     .search-field {
         height: 50px;
         padding-left: 20px;
-        border: 1px solid #e2ede6;
+        border: 1px solid #ebebeb;
         border-radius: 10px;
         @include respond-below(md) {
             height: 40px;
@@ -320,7 +320,7 @@
         }
     }
     button {
-        border: 1px solid #e2ede6;
+        border: 1px solid #ebebeb;
         border-radius: 10px;
         height: 50px;
         background-color: #052b13;
@@ -347,7 +347,7 @@ ul.product_list_widget li {
 .widget_product_categories {
     .select2-container--default {
         .select2-selection--single {
-            border: 1px solid #e2ede6;
+            border: 1px solid #ebebeb;
             border-radius: 4px;
             height: 50px;
             border-radius: 10px;

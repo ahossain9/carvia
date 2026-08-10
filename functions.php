@@ -26,10 +26,8 @@ $carvia_includes = [
 	'inc/enqueue.php',
 	'inc/nav-menus.php',
 	'inc/helpers/helpers.php',
-	'inc/widgets/recent-posts-widget.php',
+	'inc/widgets-init.php',
 	'inc/metabox/metabox-config.php',
-	'inc/elementor/elementor-init.php',
-	'inc/elementor/header-footer.php',
 	'inc/tgm/tgm-config.php',
 	'inc/custom-comment-template.php',
 ];

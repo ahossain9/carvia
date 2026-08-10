@@ -82,7 +82,7 @@
       display: flex;
       gap: 8px;
       &:hover {
-        color: $color-secondary;
+        color: $color-primary;
         .read-more-icon {
           margin-left: 4px;
         }
@@ -350,7 +350,7 @@ nav.navigation.post-navigation {
         border: 0;
         background-color: transparent;
         button {
-          border: 1px solid #e2ede6;
+          border: 1px solid #ebebeb;
           border-radius: 10px;
           height: 50px;
           margin-top: 10px;
@@ -646,8 +646,8 @@ nav.navigation.post-navigation {
 // ─── Sidebar ──────────────────────────────────────────────────
 .carvia-blog__sidebar {
   padding-left: 30px;
-  background-color: #f9ffee;
-  border: 1px solid #e2ede6;
+  background-color: #f6f4f4;
+  border: 1px solid #ebebeb;
   border-radius: 30px;
   padding: 40px;
   position: sticky;

@@ -33,7 +33,7 @@
   }
   a {
     &:hover {
-      color: $color-secondary !important;
+      color: $color-primary !important;
     }
   }
   img {
@@ -97,7 +97,7 @@
     padding: 0;
     li {
       padding: 10px 0;
-      border-bottom: 1px solid $color-border;
+      border-bottom: 1px solid #e4e4e4;
       &:last-child {
         border-bottom: none;
       }
@@ -172,7 +172,7 @@
       height: 50px;
       margin-top: 10px;
       background-color: $color-deep-black;
-      color: $color-primary;
+      color: $color-white;
       padding: 0 15px;
       transition: $transition-base;
       @include respond-below(md) {
@@ -181,7 +181,6 @@
       }
       &:hover {
         background-color: $color-primary;
-        color: $color-heading;
       }
     }
   }
@@ -213,7 +212,7 @@
   .wp-block-latest-posts__post-title,
   .wp-block-latest-comments__comment {
     a {
-      font-weight: 600;
+      font-weight: 500;
       color: $color-body;
       @include respond-below(md) {
         font-size: 15px;
@@ -230,7 +229,7 @@
   }
   .wp-block-latest-posts {
     .wp-block-latest-posts__post-title {
-      font-weight: 600;
+      font-weight: 500;
     }
   }
   .wp-block-latest-posts__post-author,
@@ -322,7 +321,7 @@ ul.wp-block-latest-posts__list.has-dates.has-author.wp-block-latest-posts li {
     @include flex(flex-start, center);
     gap: 14px;
     padding: 12px 0;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid #e4e4e4;
 
     &:last-child {
       border-bottom: none;
@@ -350,6 +349,9 @@ ul.wp-block-latest-posts__list.has-dates.has-author.wp-block-latest-posts li {
 
   .carvia-rp-content {
     flex: 1;
+    .carvia-rp-title{
+      margin: 0;
+    }
   }
 
   .carvia-rp-title {
