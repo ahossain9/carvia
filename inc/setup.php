@@ -46,15 +46,6 @@ if (! function_exists('carvia_setup')) :
             'script',
         ]);
 
-        // Post Formats
-        add_theme_support('post-formats', [
-            'video',
-            'gallery',
-            'audio',
-            'quote',
-            'link',
-        ]);
-
         // Responsive Embeds
         add_theme_support('responsive-embeds');
 
@@ -124,3 +115,19 @@ if (class_exists('Redux')) {
     }
     add_action('after_setup_theme', 'carvia_load_redux_framework');
 }
+
+add_action('after_setup_theme', function () {
+    add_theme_support('wp-block-styles');
+    add_editor_style('assets/css/editor-style.css');
+});
+
+add_action('init', function () {
+    register_block_style('core/button', [
+        'name'  => 'carvia-outline',
+        'label' => __('Carvia Outline', 'carvia'),
+    ]);
+    register_block_pattern('carvia/hero', [
+        'title'   => __('Carvia Hero', 'carvia'),
+        'content' => '<!-- wp:paragraph --><p>Hero content...</p><!-- /wp:paragraph -->',
+    ]);
+});

@@ -29,7 +29,7 @@
   background-color: $color-white;
   padding: 30px;
   border-radius: 30px;
-  border: 1px solid #e2ede6;
+  border: 1px solid #ebebeb;
   &.has-post-thumbnail {
     padding: 15px;
     .carvia-post-card__body {
@@ -94,7 +94,7 @@
   }
 }
 .sticky .carvia-post-card {
-  background-color: #ecf9cf;
+  background-color: #F6F4F4;
 }
 nav.navigation.post-navigation {
   margin-top: 30px;
@@ -158,6 +158,9 @@ nav.navigation.post-navigation {
         .carvia-post-card__footer {
           .carvia-post-card__read-more {
             font-size: 15px;
+            &:hover {
+              color:$color-primary;
+            }
           }
         }
       }
@@ -696,7 +699,7 @@ nav.navigation.post-navigation {
     &.current {
       background-color: $color-primary;
       border-color: $color-primary;
-      color: $color-heading;
+      color: $color-white;
     }
 
     &.dots {

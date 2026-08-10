@@ -369,3 +369,23 @@ ul.wp-block-latest-posts__list.has-dates.has-author.wp-block-latest-posts li {
     color: rgba($color-body, 0.65);
   }
 }
+
+.wp-caption {
+  max-width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.wp-caption-text {
+  font-size: 0.85em;
+  opacity: 0.7;
+  padding-top: 0.5em;
+}
+
+.gallery-caption {
+  font-size: 0.85em;
+  text-align: center;
+}
+
+.bypostauthor {
+  padding: 10px 15px;
+}

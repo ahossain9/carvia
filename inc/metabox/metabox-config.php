@@ -94,7 +94,7 @@ if (! function_exists('carvia_register_meta_boxes')) :
         // ── Cars ──────────────────────────────
         $meta_boxes[] = [
             'id'         => 'carvia_car_details',
-            'title'      => __('Car Details', 'carvia-core'),
+            'title'      => __('Car Details', 'carvia'),
             'post_types' => ['cars'],
             'fields'     => [
                 [
@@ -126,12 +126,12 @@ if (! function_exists('carvia_register_meta_boxes')) :
                 ],
                 [
                     'id'          => 'carvia_car_specs',
-                    'name'        => __('Specifications', 'carvia-core'),
+                    'name'        => __('Specifications', 'carvia'),
                     'type'        => 'key_value',
-                    'desc'        => __('Add Label and Value pairs', 'carvia-core'),
+                    'desc'        => __('Add Label and Value pairs', 'carvia'),
                     'placeholder' => [
-                        'key'   => __('Label', 'carvia-core'),
-                        'value' => __('Value', 'carvia-core'),
+                        'key'   => __('Label', 'carvia'),
+                        'value' => __('Value', 'carvia'),
                     ],
                 ],
             ],
