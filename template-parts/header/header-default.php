@@ -51,7 +51,7 @@ $logo_url    = ! empty($logo_data['url']) ? $logo_data['url'] : '';
         </nav><!-- header nav -->
         <!-- start mobile menu wrap -->
         <div class="mobile-menu-wrap">
-            <a class="header-menu-bar"><i class="icon icon-dashboard-circle1"></i></a>
+            <a class="header-menu-bar"><i class="icon icon-dashboard-circle"></i></a>
         </div>
         <!-- end mobile menu wrap -->
     </div><!-- header inner -->

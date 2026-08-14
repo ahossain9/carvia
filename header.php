@@ -11,7 +11,6 @@ $inner_page_header  = carvia_option('inner_header_switcher', false);
 $preloader          = carvia_option('preloader_enable', true);
 $page_header        = carvia_option('show_page_header', true);
 $logo_data          = carvia_option('header_logo', []);
-$logo_width         = carvia_option('header_logo_width', '');
 $logo_url           = !empty($logo_data['url']) ? $logo_data['url'] : '';
 
 $header_type  = 'default';
@@ -92,9 +91,7 @@ if (class_exists('Redux') && function_exists('carvia_option')) {
 						<?php elseif ($logo_url) : ?>
 							<a href="<?php echo esc_url(home_url('/')); ?>">
 								<img src="<?php echo esc_url($logo_url); ?>"
-									alt="<?php bloginfo('name'); ?>"
-									style="width:<?php echo esc_attr($logo_width); ?>;"
-									width="160">
+									alt="<?php bloginfo('name'); ?>">
 							</a>
 						<?php else : ?>
 							<a href="<?php echo esc_url(home_url('/')); ?>" class="site-title">

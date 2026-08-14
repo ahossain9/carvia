@@ -12,8 +12,6 @@ if (! defined('ABSPATH')) {
 
 $logo_data          = carvia_option('header_logo', []);
 $logo_url           = ! empty($logo_data['url']) ? $logo_data['url'] : '';
-$logo_width         = carvia_option('header_logo_width', ['width' => '160', 'units' => 'px']);
-$logo_w_val         = ! empty($logo_width['width']) ? esc_attr($logo_width['width']) . esc_attr($logo_width['units']) : '160px';
 $header_button      = carvia_option('header_button', true);
 $header_button_text = carvia_option('header_button_text', esc_html__('Book A Service', 'carvia'));
 $header_button_url  = carvia_option('header_button_url', '#');
@@ -27,8 +25,7 @@ $header_button_url  = carvia_option('header_button_url', '#');
                 <?php the_custom_logo(); ?>
             <?php elseif ($logo_url) : ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>">
-                    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php bloginfo('name'); ?>"
-                        style="width:<?php echo esc_attr($logo_w_val); ?>;">
+                    <img src="<?php echo esc_url($logo_url); ?>" alt="<?php bloginfo('name'); ?>">
                 </a>
             <?php else : ?>
                 <a href="<?php echo esc_url(home_url('/')); ?>"
@@ -76,7 +73,7 @@ $header_button_url  = carvia_option('header_button_url', '#');
         <?php endif; ?>
         <!-- start mobile menu wrap -->
         <div class="mobile-menu-wrap">
-            <a class="header-menu-bar"><i class="icon icon-dashboard-circle1"></i></a>
+            <a class="header-menu-bar"><i class="icon icon-dashboard-circle"></i></a>
         </div>
         <!-- end mobile menu wrap -->
     </div><!-- header inner -->

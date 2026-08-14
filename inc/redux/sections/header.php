@@ -78,17 +78,7 @@ Redux::set_section('carvia_options', [
             'options'  => carvia_get_header_type_choices(),
             'default'  => 'layout-transparent',
         ],
-        [
-            'id'          => 'header_logo_width',
-            'type'        => 'dimensions',
-            'units'       => ['em', 'px', '%'],
-            'title'       => esc_html__('Button Border Radius', 'carvia'),
-            'output'      => ['.header-button a'],
-            'required' => [
-                ['header_variation', '=', 'layout-one'],
-                ['header_button',      '=', true]
-            ],
-        ],
+
         // ── Header Button ──────────────────────────────────
         [
             'id'       => 'header_button_switcher',
