@@ -6,15 +6,24 @@
  * @package Carvia
  */
 
-$header_layout      = carvia_option('header_variation', 'layout-one');
-$inner_page_header  = carvia_option('inner_header_switcher', false);
-$preloader          = carvia_option('preloader_enable', true);
-$page_header        = carvia_option('show_page_header', true);
-$logo_data          = carvia_option('header_logo', []);
-$logo_url           = !empty($logo_data['url']) ? $logo_data['url'] : '';
+$header_layout      	= carvia_option('header_variation', 'layout-one');
+$inner_page_header  	= carvia_option('inner_header_switcher', false);
+$preloader          	= carvia_option('preloader_enable', true);
+$page_header        	= carvia_option('show_page_header', true);
+$logo_data          	= carvia_option('header_logo', []);
+$logo_url           	= !empty($logo_data['url']) ? $logo_data['url'] : '';
+$page_header_switcher 	= is_singular() ? get_post_meta(get_the_ID(), 'carvia_page_header_switcher', true) : '';
 
 $header_type  = 'default';
 $header_class = 'default';
+
+if ($page_header_switcher === 'show') {
+	$show_page_header = true;
+} elseif ($page_header_switcher === 'hide') {
+	$show_page_header = false;
+} else {
+	$show_page_header = $page_header;
+}
 
 if (class_exists('Redux') && function_exists('carvia_option')) {
 
@@ -116,8 +125,10 @@ if (class_exists('Redux') && function_exists('carvia_option')) {
 
 		<!-- Page Header -->
 		<?php
+
+		
 		if (class_exists('ReduxFramework')) {
-			if ($page_header == true) {
+			if ($show_page_header == true) {
 				get_template_part('template-parts/page-header/page-header', 'one');
 			}
 		} else {

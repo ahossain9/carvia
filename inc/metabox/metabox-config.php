@@ -59,6 +59,20 @@ if (! function_exists('carvia_register_meta_boxes')) :
             'priority'   => 'high',
             'fields'     => [
 
+                // ── Page Header On/Off ────────────────────────────────
+                [
+                    'name'    => esc_html__('Page Header', 'carvia'),
+                    'id'      => 'carvia_page_header_switcher',
+                    'type'    => 'select',
+                    'options' => [
+                        ''     => esc_html__('Default (from Theme Options)', 'carvia'),
+                        'show' => esc_html__('Show', 'carvia'),
+                        'hide' => esc_html__('Hide', 'carvia'),
+                    ],
+                    'std'     => '',
+                    'desc'    => esc_html__('Override the global page header visibility for this page. Leave as "Default" to use the Theme Options switcher.', 'carvia'),
+                ],
+
                 // ── Header Selection ──────────────────────────────────
                 [
                     'name'    => esc_html__('Page Header Layout', 'carvia'),
@@ -71,14 +85,11 @@ if (! function_exists('carvia_register_meta_boxes')) :
 
                 // ── Page Header Background Image ──────────────────────
                 [
-                    'name'             => esc_html__('Page Header Background Image', 'carvia'),
-                    'id'               => 'carvia_page_header_image',
-                    'type'             => 'image_advanced',
-                    'max_file_uploads' => 1,
-                    'return_value'     => 'url',
+                    'id'         => 'carvia_page_header_image',
+                    'type'       => 'single_image',
+                    'name'       => esc_html__('Page Header Background Image', 'carvia'),
                     'desc'             => esc_html__('Override the global page header background for this page.', 'carvia'),
                 ],
-
                 // ── Footer Selection ──────────────────────────────────
                 [
                     'name'    => esc_html__('Footer Layout', 'carvia'),
