@@ -54,7 +54,7 @@
                     background-color: #FF4400;
                     border-radius: 7px;
                     padding: 12px 20px;
-                    color: $color-heading;
+                    color: $color-white;
                     font-weight: 500;
                     @include respond-below(md) {
                         padding: 12px 20px;
@@ -97,6 +97,7 @@
                 span.current {
                     background-color: #FF4400;
                     border-color: #FF4400;
+                    color: $color-white;
                 }
             }
         }

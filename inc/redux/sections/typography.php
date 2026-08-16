@@ -26,7 +26,7 @@ Redux::set_section('carvia_options', [
             'text-align'  => false,
             'font-backup' => false,
             'line-height' => false,
-            'output'      => ['body #page'],
+            'output'      => ['body.wp-theme-carvia'],
             'default'     => [
                 'font-family'  => 'Inter',
                 'font-size'    => '16px',
@@ -43,7 +43,7 @@ Redux::set_section('carvia_options', [
             'font-backup' => false,
             'line-height' => false,
             'font-size'   => false,
-            'output'      => ['#page h1, #page h2, #page h3, #page h4, #page h5, #page h6'],
+            'output'      => ['.wp-theme-carvia h1, .wp-theme-carvia h2, .wp-theme-carvia h3, .wp-theme-carvia h4, .wp-theme-carvia h5, .wp-theme-carvia h6'],
             'default'     => [
                 'font-family' => 'Plus Jakarta Sans',
                 'font-weight' => '700'
