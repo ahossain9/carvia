@@ -188,6 +188,7 @@ kbd {
     font-size: 0.875em;
     background-color: $color-primary;
     border-radius: 0.25rem;
+    color: $color-white;
 }
 
 kbd kbd {
@@ -309,7 +310,7 @@ legend {
 blockquote {
     padding: 30px;
     margin: 1.5rem 0;
-    background-color: $color-light-green;
+    background-color: $color-light-gray;
     border-radius: 20px;
     font-style: italic;
     color: $color-body;
@@ -323,7 +324,7 @@ pre {
     overflow: auto;
     font-size: .875em;
     white-space: pre-wrap;
-    background: $color-light-green;
+    background: $color-light-gray;
     border: 1px solid $color-border;
     padding: 20px;
     border-radius: 15px;

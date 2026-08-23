@@ -218,7 +218,7 @@ nav.navigation.post-navigation {
       h4,
       h5,
       h6 {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
       }
 
       blockquote {
@@ -244,7 +244,7 @@ nav.navigation.post-navigation {
         }
         tbody {
           tr:nth-of-type(odd) {
-            background: #f9ffee;
+            background: #F6F4F4;
           }
         }
       }
@@ -254,7 +254,9 @@ nav.navigation.post-navigation {
         padding: 10px 0;
       }
       .wp-block-pullquote {
-        padding: 10px 0;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #F6F4F4;
       }
       .wp-block-button__link {
         margin-bottom: 15px;
@@ -276,8 +278,9 @@ nav.navigation.post-navigation {
           margin: 5px 5px 5px 0;
           margin-left: 5px;
           &:hover {
-            background-color: #052b13;
-            color: $color-primary;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
           }
         }
       }
@@ -354,13 +357,12 @@ nav.navigation.post-navigation {
           border-radius: 10px;
           height: 50px;
           margin-top: 10px;
-          background-color: #052b13;
-          color: #FF4400;
+          background-color: $color-primary;
+          color: $color-white;
           padding: 0 15px;
           transition: 0.3s;
           &:hover {
-            background-color: $color-primary;
-            color: $color-heading;
+            background-color: $color-heading;
           }
         }
       }
@@ -374,8 +376,9 @@ nav.navigation.post-navigation {
           background-color: #fff;
           margin: 5px 5px 5px 0;
           &:hover {
-            background-color: $color-deep-black;
-            color: $color-primary;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            color: $color-white;
           }
         }
       }
@@ -383,7 +386,7 @@ nav.navigation.post-navigation {
         table {
           margin-bottom: 10px;
           th {
-            background-color: #e4e9dc;
+            background-color: #dfdfdf;
             padding: 8px 0;
           }
 
@@ -575,13 +578,13 @@ nav.navigation.post-navigation {
 
           &:hover {
             background: $color-primary;
-            color: $color-heading;
+            color: $color-white;
           }
         }
 
         span {
           background: $color-primary;
-          color: $color-heading;
+          color: $color-white;
         }
         .wp-block-latest-posts.wp-block-latest-posts__list,
         .wp-block-rss {
@@ -711,4 +714,14 @@ nav.navigation.post-navigation {
       }
     }
   }
+}
+ul.wp-block-latest-posts__list.has-dates.wp-block-latest-posts.is-layout-flow.wp-block-latest-posts-is-layout-flow,
+ul.wp-block-latest-posts__list.is-grid.wp-block-latest-posts.is-layout-flow.wp-block-latest-posts-is-layout-flow {
+  list-style: disc;
+}
+ul.wp-block-latest-posts__list.has-dates.wp-block-latest-posts.is-layout-flow.wp-block-latest-posts-is-layout-flow li {
+  padding-bottom: 10px;
+}
+.wp-block-pullquote .has-text-color.has-light-gray-color {
+  border: 0;
 }

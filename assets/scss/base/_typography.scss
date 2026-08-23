@@ -14,13 +14,13 @@
   h6 {
     @include heading-style;
     margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     @include respond-below(md) {
       margin-bottom: 1rem;
     }
   }
   p {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     @include respond-below(md) {
       margin-bottom: 1rem;
     }

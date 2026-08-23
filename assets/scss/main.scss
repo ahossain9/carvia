@@ -2,6 +2,7 @@
 @use 'abstracts/variables' as *;
 @use 'abstracts/functions' as *;
 @use 'abstracts/mixins' as *;
+@use 'abstracts/global.scss';
 
 // ─── Base ─────────────────────────────────────────────────────
 @use 'base/reset';
@@ -23,6 +24,7 @@
 // ─── Pages ────────────────────────────────────────────────────
 @use 'pages/blog';
 @use 'pages/page';
+@use 'pages/service-archive';
 
 // ─── PLugins ──────────────────────────────────────────────────
 @use 'plugins/woocommerce';
