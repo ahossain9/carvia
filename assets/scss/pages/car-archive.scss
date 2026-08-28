@@ -3,11 +3,15 @@
 @use "../abstracts/mixins" as *;
 
 .carvia-cars-archive {
-    padding: 100px 0 80px;
+    padding: 85px 0 90px;
     @include respond-below(lg) {
-        padding: 60px 0 40px;
+        padding: 60px 0;
+    }
+    @include respond-below(md) {
+        padding: 50px 0;
     }
     .car-card {
+        margin: 15px 0;
         .car-card-top-content {
             position: relative;
 
@@ -31,17 +35,29 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: 6px;
+                @include respond-below(md) {
+                    width: 80px;
+                    height: 80px;
+                }
 
                 .car-rental-price {
                     font-size: 26px;
                     font-weight: 700;
                     margin: 0;
                     line-height: 26px;
+                    @include respond-below(md) {
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
                 }
 
                 .car-rental-duration {
                     font-size: 16px;
                     line-height: 16px;
+                    @include respond-below(md) {
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
                 }
             }
         }
@@ -71,6 +87,11 @@
                 .spec-value {
                     color: #444;
                     font-weight: 500;
+                }
+            }
+            .car-model-name {
+                @include respond-below(md) {
+                    margin: 0;
                 }
             }
         }

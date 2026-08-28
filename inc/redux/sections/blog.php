@@ -33,7 +33,7 @@ Redux::set_section('carvia_options', [
                     'img'   => CARVIA_INC_URI . 'redux/assets/left-sidebar.png',
                 ],
             ],
-            'default'  => 'grid',
+            'default'  => 'list',
         ],
         [
             'id'      => 'blog_sidebar',

@@ -12,12 +12,15 @@
   .carvia-blog-wrap {
     &.sidebar-right {
       margin-right: 30px;
-      @include respond-below(md) {
+
+      @include respond-below(lg) {
         margin-right: 0;
       }
     }
+
     &.sidebar-left {
       margin-left: 30px;
+
       @include respond-below(lg) {
         margin-left: 0;
       }
@@ -30,6 +33,10 @@
   padding: 30px;
   border-radius: 30px;
   border: 1px solid #ebebeb;
+  overflow: hidden;
+  @include respond-below(md) {
+    padding: 20px;
+  }
   &.has-post-thumbnail {
     padding: 15px;
     .carvia-post-card__body {
@@ -81,6 +88,9 @@
       font-weight: 500;
       display: flex;
       gap: 8px;
+      @include respond-below(md) {
+        font-size: 14px;
+      }
       &:hover {
         color: $color-primary;
         .read-more-icon {
@@ -644,34 +654,65 @@ nav.navigation.post-navigation {
   .wp-block-avatar {
     margin-bottom: 10px;
   }
+
+  figure.wp-block-pullquote {
+    border: 0;
+    border-left: 4px solid $color-primary;
+    blockquote {
+        border: 0;
+        border-left: 0 !important;
+      }
+  }
+  .wp-block-code{
+    border-radius: 15px;
+  }
+  .wp-block-quote:where(.has-text-align-right) {
+    border-right-color: $color-primary;
+  }
+  figure.wp-block-pullquote {
+    border-color: $color-primary !important;
+  }
+  figure.wp-block-pullquote.has-background.has-cyan-bluish-gray-background-color.is-style-solid-color {
+    border: 0;
+  }  
+  form.post-password-form {
+    p {
+      input {
+        height: 50px;
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+      }
+      input[type="submit"] {
+        padding: 0 20px;
+        border-color: $color-primary;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: 10px;
+        transition: 0.5s;
+        &:hover {
+            background-color: $color-heading;
+            border-color: $color-heading;
+          }
+      }
+    }
+  }
 }
 
 // ─── Sidebar ──────────────────────────────────────────────────
 .carvia-blog__sidebar {
-  padding-left: 30px;
-  background-color: #f6f4f4;
-  border: 1px solid #ebebeb;
-  border-radius: 30px;
-  padding: 40px;
   position: sticky;
   top: 10px;
-  @include respond-below(lg) {
-    padding: 25px;
-  }
-  @include respond-below(sm) {
-    padding: 25px;
-  }
 }
 
 .blog-sidebar-left .carvia-blog__sidebar {
-  @include respond-below(sm) {
-    margin-bottom: 40px;
+  @include respond-below(md) {
+    margin-bottom: 60px;
   }
 }
 
 .blog-sidebar-right .carvia-blog__sidebar {
-  @include respond-below(sm) {
-    margin-top: 40px;
+  @include respond-below(md) {
+    margin-top: 60px;
   }
 }
 
@@ -724,4 +765,8 @@ ul.wp-block-latest-posts__list.has-dates.wp-block-latest-posts.is-layout-flow.wp
 }
 .wp-block-pullquote .has-text-color.has-light-gray-color {
   border: 0;
+}
+.wp-block-group.has-border-color.has-black-border-color {
+  border-radius: 20px;
+  margin-bottom: 15px;
 }

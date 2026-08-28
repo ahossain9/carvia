@@ -11,13 +11,12 @@ get_header();
 $layout  = carvia_option('blog_layout', 'grid');
 $sidebar = carvia_option('blog_sidebar', 'right');
 $has_sb  = ('none' !== $sidebar) && is_active_sidebar('blog-sidebar');
-$col     = $has_sb ? 'col-lg-8' : 'col-12';
 ?>
 
 <main id="primary" class="site-main carvia-blog carvia-blog--<?php echo esc_attr($layout); ?>">
 	<div class="container">
 		<div class="row">
-			<div class="<?php echo esc_attr($col); ?>">
+			<div class="col-md-12">
 				<?php if (have_posts()) : ?>
 					<div class="carvia-blog-<?php echo esc_attr($layout); ?>">
 						<?php while (have_posts()) :
@@ -36,12 +35,6 @@ $col     = $has_sb ? 'col-lg-8' : 'col-12';
 					</div>
 				<?php endif; ?>
 			</div>
-
-			<?php if ($has_sb) : ?>
-				<aside class="col-lg-4 carvia-blog__sidebar">
-					<?php dynamic_sidebar('blog-sidebar'); ?>
-				</aside>
-			<?php endif; ?>
 		</div>
 	</div>
 </main>

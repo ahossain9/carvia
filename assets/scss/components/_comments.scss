@@ -329,14 +329,15 @@
 
 .comment-btn {
   @include btn-base;
-  background: $color-deep-black;
-  border-color: $color-secondary;
+  background-color: $color-primary;
+  border-color: $color-primary;
   color: $color-white;
   padding: 18px 40px;
   font-size: 15px;
   border: 0;
   &:hover {
-    background-color: $color-primary;
+    background-color: $color-heading;
+    border-color: $color-heading;
     color: $color-white;
   }
 }

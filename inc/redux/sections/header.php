@@ -13,7 +13,7 @@ if (! defined('ABSPATH')) {
 // ── Build dynamic header choices including Elementor templates ──
 function carvia_get_header_type_choices()
 {
-    // 1. Define your hardcoded theme headers
+    // 1. Define hardcoded theme headers
     $choices = [
         'layout-one'         => esc_html__('Header One',      'carvia'),
         'layout-transparent' => esc_html__('Header Transparent', 'carvia'),
